@@ -38,6 +38,14 @@
                 "api-reference/kyc/get-user-kyc",
                 "api-reference/kyc/approve-user-kyc"
             ]
+        },
+        {
+            "group": "KYB",
+            "pages": [
+                "api-reference/kyb/get-user-kyb",
+                "api-reference/kyb/approve-user-kyb",
+                "api-reference/kyb/delete-user-kyb"
+            ]
         }
     ]
   },
