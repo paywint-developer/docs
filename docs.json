@@ -29,12 +29,15 @@
         {
             "group": "Users",
             "pages": [
-                "api-reference/users/create-user"
+                "api-reference/users/create-user",
+                "api-reference/users/list-users",
+                "api-reference/users/get-user"
             ]
         },
         {
             "group": "KYC",
             "pages": [
+                "api-reference/kyc/submit-user-kyc",
                 "api-reference/kyc/get-user-kyc",
                 "api-reference/kyc/approve-user-kyc"
             ]
