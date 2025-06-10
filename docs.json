@@ -19,14 +19,6 @@
             ]
         },
         {
-            "group": "Payment",
-            "pages": [
-              "api-reference/payment/create-payment",
-              "api-reference/payment/get-payment",
-              "api-reference/payment/list-payments"
-            ]
-        },
-        {
             "group": "Users",
             "pages": [
                 "api-reference/users/create-user",
@@ -49,6 +41,14 @@
               "api-reference/kyb/approve-user-kyb",
               "api-reference/kyb/reject-user-kyb",
               "api-reference/kyb/delete-user-kyb"
+            ]
+        },
+        {
+            "group": "Payment",
+            "pages": [
+              "api-reference/payment/create-payment",
+              "api-reference/payment/get-payment",
+              "api-reference/payment/list-payments"
             ]
         },
         {
