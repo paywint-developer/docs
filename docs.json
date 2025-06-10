@@ -13,7 +13,7 @@
         {
             "group": "Get Started",
             "pages": [
-                "introduction",
+                "/api-reference/introduction",
                 "environments",
                 "authentication"
             ]
