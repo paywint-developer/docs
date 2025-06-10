@@ -21,7 +21,7 @@
         {
             "group": "Bank Accounts",
             "pages": [
-                "api-reference/endpoint/bank-accounts/add-bank-account"
+                "api-reference/bank-accounts/add-bank-account"
             ]
         },
         {
