@@ -13,7 +13,7 @@
         {
             "group": "Get Started",
             "pages": [
-                "/api-reference/introduction",
+                "introduction",
                 "environments",
                 "authentication"
             ]
@@ -100,5 +100,11 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/introduction"
+    }
+  ]
 }
