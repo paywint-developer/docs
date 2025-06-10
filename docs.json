@@ -35,7 +35,8 @@
         {
             "group": "KYC",
             "pages": [
-                "api-reference/kyc/get-user-kyc"
+                "api-reference/kyc/get-user-kyc",
+                "api-reference/kyc/approve-user-kyc"
             ]
         }
     ]
