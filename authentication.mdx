@@ -1,4 +1,27 @@
 ---
 title: "Authentication"
-description: "TODO"
+description: "API key based authentication"
+icon: "key"
 ---
+**All API requests to Paywint must be made over HTTPS and authenticated using an API key.**
+Include the API key in the request header as `X-Platform-ID`, and the HMAC-SHA256 signature in `X-Signature`.
+
+The signature should be generated using your platform's secret key and the canonical string format: `METHOD + PATH + QUERY + BODY_HASH`
+
+```curl Example Api Call
+curl -X POST "https://<environment>/api/platform/users/create" \
+  -H "Content-Type: application/json" \
+  -H "X-Platform-ID: YOUR_API_KEY" \
+  -H "X-Signature: GENERATED_SIGNATURE" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "9876543210",
+    "phone_country_code": "+1"
+  }'
+
+```
+
+Make sure to use the correct API key for the appropriate [environment](/environments).
+
+Keep your API key secure and never expose it on the client side.
