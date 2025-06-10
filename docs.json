@@ -50,6 +50,21 @@
               "api-reference/kyb/reject-user-kyb",
               "api-reference/kyb/delete-user-kyb"
             ]
+        },
+        {
+            "group": "Cards",
+            "pages": [
+              "api-reference/cards/add-card",
+              "api-reference/cards/add-card-image",
+              "api-reference/cards/delete-card"
+            ]
+        },
+        {
+            "group": "Wallet",
+            "pages": [
+              "api-reference/wallet/get-wallet",
+              "api-reference/wallet/fund-wallet"
+            ]
         }
     ]
   },
