@@ -10,7 +10,10 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://api.pw.wintpay.com"
+    },
+    {
+      "url": "https://api.paywint.com"
     }
   ],
   "security": [
