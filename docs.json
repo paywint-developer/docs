@@ -22,22 +22,20 @@
             "group": "Bank Accounts",
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
-                {
-                    "group": "Verification",
-                    "pages": [
-                        "api-reference/bank-accounts/release-micro-deposit",
-                        "api-reference/bank-accounts/verify-bank-account"
-                    ]
-                }
+                "api-reference/bank-accounts/release-micro-deposit",
+                "api-reference/bank-accounts/verify-bank-account"
             ]
         },
         {
-            "group": "Endpoint Examples",
+            "group": "Users",
             "pages": [
-                "api-reference/endpoint/get",
-                "api-reference/endpoint/create",
-                "api-reference/endpoint/delete",
-                "api-reference/endpoint/webhook"
+                "api-reference/users/create-user"
+            ]
+        },
+        {
+            "group": "KYC",
+            "pages": [
+                "api-reference/kyc/get-user-kyc"
             ]
         }
     ]
