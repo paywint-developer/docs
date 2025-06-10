@@ -109,11 +109,5 @@
       "source": "/",
       "destination": "/introduction"
     }
-  ],
-  "api": {
-    "openapi": {
-      "source": "https://geography-sydney-concentrations-contractor.trycloudflare.com/openapi.json",
-      "directory": "api-reference"
-    }
-  }
+  ]
 }
