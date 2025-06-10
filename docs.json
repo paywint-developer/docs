@@ -23,7 +23,7 @@
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-bank-account"
+                "api-reference/bank-accounts/verify-micro-deposit"
             ]
         },
         {
@@ -42,8 +42,8 @@
         {
             "group": "KYB",
             "pages": [
-                "api-reference/kyb/get-user-kyb",
-                "api-reference/kyb/approve-user-kyb",
+              "api-reference/kyb/approve-user-kyb",
+              "api-reference/kyb/reject-user-kyb",
                 "api-reference/kyb/delete-user-kyb"
             ]
         }
@@ -57,13 +57,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@paywint.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.paywint.com"
     }
   },
   "footer": {
