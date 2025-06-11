@@ -1,5 +1,5 @@
 ---
-title: 🔐 Signature Authentication
+title: Signature Authentication
 description: How to generate HMAC-SHA256 signatures for secure API access in Paywint.
 ---
 
@@ -12,7 +12,7 @@ You must include:
 
 ---
 
-## 📄 Canonical String Format
+## Canonical String Format
 
 To generate a valid signature, you need to build a **canonical string** using the following format:
 
@@ -20,7 +20,7 @@ To generate a valid signature, you need to build a **canonical string** using th
 METHOD + PATH + QUERY + BODY_HASH
 ```
 
-## 🔹 Definitions:
+## Definitions:
 
 METHOD: HTTP method (e.g., GET, POST, PUT)
 
@@ -30,7 +30,7 @@ QUERY: Raw query string (e.g., ?id=123), or empty if none
 
 BODY_HASH: SHA256 hex digest of the raw request body (for POST, PUT, etc.)
 
-## 📘 Example Input
+## Example Input
 ```
 Method: POST
 Path: /api/platform/users/create
@@ -44,7 +44,7 @@ Body:
 }
 ```
 
-## 🧪 Signature Generation Examples
+## Signature Generation Examples
 <CodeGroup>
 
 ```javascript Node.js
@@ -210,7 +210,7 @@ puts "X-Signature: #{signature}"
 
 </CodeGroup>
 
-## 🧪 Complete API Call Examples
+## Complete API Call Examples
 Once the signature is generated, use it in the X-Signature header as shown below:
 <CodeGroup>
 ```curl Curl
@@ -466,7 +466,7 @@ puts "Response: #{response.body}"
 ```
 </CodeGroup>
 
-# ⚠️ Best Practices
+## Best Practices
 - Keep your **API Key** and **Secret Key** secure — never expose them on the client side
 - Always use HTTPS to protect the signature and payload
 - Regenerate the signature for every request; it's not reusable
