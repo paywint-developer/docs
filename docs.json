@@ -114,12 +114,6 @@
     "openapi": {
       "source": "https://warriors-cool-displays-programs.trycloudflare.com/openapi.json",
       "directory": "api-reference"
-    },
-    "mdx": {
-      "server": [
-        "https://api.sandbox.paywint.com",
-        "https://api.paywint.com"
-      ]
     }
   },
   "seo": {
