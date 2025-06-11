@@ -20,17 +20,17 @@ To generate a valid signature, you need to build a **canonical string** using th
 METHOD + PATH + QUERY + BODY_HASH
 ```
 
-## Definitions:
+### Definitions
 
-METHOD: HTTP method (e.g., GET, POST, PUT)
+**METHOD**: HTTP method (e.g., GET, POST, PUT)
 
-PATH: API path only (e.g., /api/platform/users/create)
+**PATH**: API path only (e.g., /api/platform/users/create)
 
-QUERY: Raw query string (e.g., ?id=123), or empty if none
+**QUERY**: Raw query string (e.g., ?id=123), or empty if none
 
-BODY_HASH: SHA256 hex digest of the raw request body (for POST, PUT, etc.)
+**BODY_HASH**: SHA256 hex digest of the raw request body (for POST, PUT, etc.)
 
-## Example Input
+### Example Input
 ```
 Method: POST
 Path: /api/platform/users/create
