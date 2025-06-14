@@ -118,5 +118,11 @@
   },
   "seo": {
     "indexing": "all"
+  },
+  "hooks": {
+    "preRequest": {
+      "script": "signatureHook.js"
+    }
   }
+
 }
