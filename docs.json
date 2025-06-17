@@ -29,18 +29,14 @@
         {
             "group": "KYC",
             "pages": [
-                "api-reference/kyc/submit-user-kyc",
-                "api-reference/kyc/update-user-kyc-status",
-                "api-reference/kyc/approve-user-kyc"
+                "api-reference/kyc/get-user-kyc",
+                "api-reference/kyc/get-user-kyc-link"
             ]
         },
         {
             "group": "KYB",
             "pages": [
-              "api-reference/kyb/submit-user-kyb",
-              "api-reference/kyb/approve-user-kyb",
-              "api-reference/kyb/reject-user-kyb",
-              "api-reference/kyb/delete-user-kyb"
+              "api-reference/kyb/submit-user-kyb"
             ]
         },
         {
