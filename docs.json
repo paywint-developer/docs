@@ -53,7 +53,8 @@
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-micro-deposit"
+                "api-reference/bank-accounts/verify-micro-deposit",
+                "api-reference/bank-accounts/delete-bank"
             ]
         },
         {
