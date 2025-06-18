@@ -75,8 +75,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/app-logo.png",
-    "dark": "/logo/app-logo.png"
+    "light": "/logo/app-logo-dark.png",
+    "dark": "/logo/app-logo-dark.png"
   },
   "navbar": {
     "links": [
@@ -88,7 +88,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://app.paywint.com"
+      "href": "https://merchant.paywint.com"
     }
   },
   "footer": {
@@ -109,7 +109,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://band-undertaken-knights-stockholm.trycloudflare.com/openapi.json",
+      "source": "https://api.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
