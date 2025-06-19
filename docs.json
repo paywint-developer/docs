@@ -112,7 +112,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://sciences-i-mai-concern.trycloudflare.co/openapi.json",
+      "source": "https://sciences-i-mai-concern.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
