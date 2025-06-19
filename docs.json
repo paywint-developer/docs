@@ -29,18 +29,15 @@
         {
             "group": "KYC",
             "pages": [
-                "api-reference/kyc/submit-user-kyc",
-                "api-reference/kyc/update-user-kyc-status",
-                "api-reference/kyc/approve-user-kyc"
+                "api-reference/kyc/get-user-kyc",
+                "api-reference/kyc/get-user-kyc-link"
             ]
         },
         {
             "group": "KYB",
             "pages": [
-              "api-reference/kyb/submit-user-kyb",
-              "api-reference/kyb/approve-user-kyb",
-              "api-reference/kyb/reject-user-kyb",
-              "api-reference/kyb/delete-user-kyb"
+              "api-reference/kyb/get-user-kyb",
+              "api-reference/kyb/submit-user-kyb"
             ]
         },
         {
@@ -56,7 +53,8 @@
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-micro-deposit"
+                "api-reference/bank-accounts/verify-micro-deposit",
+                "api-reference/bank-accounts/delete-bank"
             ]
         },
         {
@@ -78,8 +76,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/app-logo.png",
-    "dark": "/logo/app-logo.png"
+    "light": "/logo/app-logo-dark.png",
+    "dark": "/logo/app-logo-dark.png"
   },
   "navbar": {
     "links": [
