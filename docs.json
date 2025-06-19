@@ -51,7 +51,7 @@
         {
             "group": "Bank Accounts",
             "pages": [
-                "api-reference/bank-accounts/get-bank-accoun",
+                "api-reference/bank-accounts/get-bank-account",
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/release-micro-deposit",
                 "api-reference/bank-accounts/verify-micro-deposit",
