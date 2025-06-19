@@ -29,15 +29,18 @@
         {
             "group": "KYC",
             "pages": [
-                "api-reference/kyc/get-user-kyc",
-                "api-reference/kyc/get-user-kyc-link"
+                "api-reference/kyc/submit-user-kyc",
+                "api-reference/kyc/update-user-kyc-status",
+                "api-reference/kyc/approve-user-kyc"
             ]
         },
         {
             "group": "KYB",
             "pages": [
-              "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb"
+              "api-reference/kyb/submit-user-kyb",
+              "api-reference/kyb/approve-user-kyb",
+              "api-reference/kyb/reject-user-kyb",
+              "api-reference/kyb/delete-user-kyb"
             ]
         },
         {
@@ -53,8 +56,7 @@
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-micro-deposit",
-                "api-reference/bank-accounts/delete-bank"
+                "api-reference/bank-accounts/verify-micro-deposit"
             ]
         },
         {
@@ -76,8 +78,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/app-logo-dark.png",
-    "dark": "/logo/app-logo-dark.png"
+    "light": "/logo/app-logo.png",
+    "dark": "/logo/app-logo.png"
   },
   "navbar": {
     "links": [
@@ -89,7 +91,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://merchant.paywint.com"
+      "href": "https://app.paywint.com"
     }
   },
   "footer": {
@@ -110,17 +112,11 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.pw.wintpay.com/openapi.json",
+      "source": "https://sciences-i-mai-concern.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
   "seo": {
     "indexing": "all"
-  },
-  "hooks": {
-    "preRequest": {
-      "script": "signatureHook.js"
-    }
   }
-
 }
