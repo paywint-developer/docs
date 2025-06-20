@@ -113,7 +113,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://exterior-returned-proceedings-ultram.trycloudflare.com",
+      "source": "https://exterior-returned-proceedings-ultram.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
