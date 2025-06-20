@@ -37,7 +37,8 @@
             "group": "KYB",
             "pages": [
               "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb"
+              "api-reference/kyb/submit-user-kyb",
+              "api-reference/kyb/submit-kyb-docs"
             ]
         },
         {
