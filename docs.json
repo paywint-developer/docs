@@ -73,7 +73,7 @@
             "group": "Wallet",
             "pages": [
               "api-reference/wallet/get-wallet",
-              "api-reference/wallet/fund-walle",
+              "api-reference/wallet/fund-wallet",
               "api-reference/wallet/withdraw-wallet-fund"
             ]
         }
