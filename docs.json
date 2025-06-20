@@ -63,7 +63,7 @@
             "group": "Cards",
             "pages": [
               "api-reference/cards/add-card",
-              "api-reference/cards/get-card",
+              "api-reference/cards/get-car",
               "api-reference/cards/list-cards",
               "api-reference/cards/delete-card"
             ]
