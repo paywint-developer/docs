@@ -56,7 +56,7 @@
                 "api-reference/bank-accounts/list-accounts",
                 "api-reference/bank-accounts/release-micro-deposit",
                 "api-reference/bank-accounts/verify-micro-deposit",
-                "api-reference/bank-accounts/delete-ban"
+                "api-reference/bank-accounts/delete-bank"
             ]
         },
         {
