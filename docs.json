@@ -15,7 +15,8 @@
             "pages": [
                 "introduction",
                 "environments",
-                "authentication"
+                "authentication",
+                "webhook"
             ]
         },
         {
