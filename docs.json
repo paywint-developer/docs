@@ -15,7 +15,8 @@
             "pages": [
                 "introduction",
                 "environments",
-                "authentication"
+                "authentication",
+                "webhook"
             ]
         },
         {
@@ -37,7 +38,8 @@
             "group": "KYB",
             "pages": [
               "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb"
+              "api-reference/kyb/submit-user-kyb",
+              "api-reference/kyb/submit-kyb-docs"
             ]
         },
         {
@@ -52,6 +54,8 @@
             "group": "Bank Accounts",
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
+                "api-reference/bank-accounts/get-bank-account",
+                "api-reference/bank-accounts/list-accounts",
                 "api-reference/bank-accounts/release-micro-deposit",
                 "api-reference/bank-accounts/verify-micro-deposit",
                 "api-reference/bank-accounts/delete-bank"
@@ -61,7 +65,8 @@
             "group": "Cards",
             "pages": [
               "api-reference/cards/add-card",
-              "api-reference/cards/add-card-image",
+              "api-reference/cards/get-card",
+              "api-reference/cards/list-cards",
               "api-reference/cards/delete-card"
             ]
         },
@@ -89,7 +94,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://merchant.paywint.com"
+      "href": "https://app.paywint.com"
     }
   },
   "footer": {
@@ -110,17 +115,11 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.pw.wintpay.com/openapi.json",
+      "source": "https://maybe-publicly-collaboration-metals.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
   "seo": {
     "indexing": "all"
-  },
-  "hooks": {
-    "preRequest": {
-      "script": "signatureHook.js"
-    }
   }
-
 }
