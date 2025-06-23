@@ -115,7 +115,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://sandbox.m.paywint.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
