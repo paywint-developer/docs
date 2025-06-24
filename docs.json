@@ -115,7 +115,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://sandbox.api.paywint.com/openapi.json1",
+      "source": "https://mechanisms-debian-median-collectors.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
