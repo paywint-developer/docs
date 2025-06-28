@@ -116,7 +116,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.sandbox.paywint.com/openapi.json",
+      "source": "https://reviewer-two-chronicles-exp.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
