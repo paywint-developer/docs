@@ -20,8 +20,10 @@ You may receive webhook notifications for the following event types:
 |----------|------------|
 | KYC | `kyc.applied`<br />`kyc.approved`<br />`kyc.rejected`<br />`kyc.failed`<br />`kyc.completed` |
 | KYB | `kyb.approved`<br />`kyb.rejected` |
-| Wallet | `wallet.funded`<br />`wallet.withdrawn` |
 | Card | `card.added`<br />`card.images_uploaded` |
+| Wallet Funding | `wallet.funding.initiated`<br />`wallet.funding.processing`<br />`wallet.funding.success`<br />`wallet.funding.failed`<br />`wallet.funding.rejected` |
+| Wallet Withdrawal | `wallet.withdrawal.initiated`<br />`wallet.withdrawal.processing`<br />`wallet.withdrawal.success`<br />`wallet.withdrawal.failed`<br />`wallet.withdrawal.rejected` |
+| Payment | `payment.initiated`<br />`payment.processing`<br />`payment.success`<br />`payment.failed`<br />`payment.rejected`<br />`payment.refunded` |
 
 Each event will be sent to the webhook URL configured on your platform account.
 
@@ -35,7 +37,6 @@ Each webhook is sent as a `POST` request with the following JSON structure:
 {
   "event": "kyc.applied",
   "id": "a891bfc2-ffff-464b-89e4-xxxxx",
-  "webhook_status": "completed",  // or "delivered"
   "data": {
     // Event-specific payload
   },
