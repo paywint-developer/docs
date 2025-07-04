@@ -71,6 +71,16 @@
             ]
         },
         {
+            "group": "Payee",
+            "pages": [
+              "api-reference/payee/create-payee",
+              "api-reference/payee/udpate-payee",
+              "api-reference/payee/get-payee",
+              "api-reference/payee/list-payee",
+              "api-reference/payee/delete-payee"
+            ]
+        },
+        {
             "group": "Wallet",
             "pages": [
               "api-reference/wallet/get-wallet",
@@ -115,7 +125,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.sandbox.paywint.com/openapi.json",
+      "source": "https://law-scientist-requires-florence.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
