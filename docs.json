@@ -125,7 +125,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://law-scientist-requires-florence.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
