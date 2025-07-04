@@ -71,6 +71,14 @@
             ]
         },
         {
+            "group": "Wallet",
+            "pages": [
+              "api-reference/wallet/get-wallet",
+              "api-reference/wallet/fund-wallet",
+              "api-reference/wallet/withdraw-wallet-fund"
+            ]
+        },
+        {
             "group": "Payee",
             "pages": [
               "api-reference/payee/create-payee",
@@ -81,11 +89,21 @@
             ]
         },
         {
-            "group": "Wallet",
+            "group": "Payee Bank Accounts",
             "pages": [
-              "api-reference/wallet/get-wallet",
-              "api-reference/wallet/fund-wallet",
-              "api-reference/wallet/withdraw-wallet-fund"
+              "api-reference/payee-bank-accounts/add-payee-account",
+              "api-reference/payee-bank-accounts/get-payee-account",
+              "api-reference/payee-bank-accounts/list-payee-account",
+              "api-reference/payee-bank-accounts/delete-payee-account"
+            ]
+        },
+        {
+            "group": "Payee Cards",
+            "pages": [
+              "api-reference/payee-card/add-payee-card",
+              "api-reference/payee-card/get-payee-card",
+              "api-reference/payee-card/list-payee-card",
+              "api-reference/payee-card/delete-payee-card"
             ]
         }
     ]
