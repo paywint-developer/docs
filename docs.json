@@ -46,7 +46,8 @@
             "pages": [
               "api-reference/payment/create-payment",
               "api-reference/payment/get-payment",
-              "api-reference/payment/list-payments"
+              "api-reference/payment/list-payments",
+              "api-reference/payment/list-user-payments"
             ]
         },
         {
