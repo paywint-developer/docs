@@ -35,8 +35,8 @@ To configure webhooks in the **Production environment**:
 Below is the complete list of webhook events sent by Paywint.
 
 ### KYC Events
-| Event Name      | Description                        |
-|-----------------|------------------------------------|
+| Event Name      | Description                         |
+|-----------------|-------------------------------------|
 | `kyc.pending`   | KYC verification is pending review. |
 | `kyc.applied`   | User has submitted KYC details.     |
 | `kyc.approved`  | KYC verification has been approved. |
@@ -47,50 +47,52 @@ Below is the complete list of webhook events sent by Paywint.
 
 
 ### KYB Events
-| Event Name      | Description                       |
-|-----------------|-----------------------------------|
+| Event Name      | Description                         |
+|-----------------|-------------------------------------|
 | `kyb.approved`  | KYB verification has been approved. |
 | `kyb.rejected`  | KYB verification has been rejected. |
 | `kyb.deleted`   | KYB record has been deleted.        |
 
 
 ### Wallet Funding Events
-| Event Name                | Description                        |
-|---------------------------|------------------------------------|
-| `wallet.funding.initiated`  | Wallet funding request initiated. |
-| `wallet.funding.processing` | Wallet funding is in progress.    |
-| `wallet.funding.success`    | Wallet funding was successful.    |
-| `wallet.funding.failed`     | Wallet funding failed.            |
-| `wallet.funding.rejected`   | Wallet funding request rejected.  |
+| Event Name                  | Description                        |
+|-----------------------------|------------------------------------|
+| `wallet.funding.initiated`  | Wallet funding request initiated.  |
+| `wallet.funding.processing` | Wallet funding is in progress.     |
+| `wallet.funding.success`    | Wallet funding was successful.     |
+| `wallet.funding.failed`     | Wallet funding failed.             |
+| `wallet.funding.rejected`   | Wallet funding request rejected.   |
 
 
 ### Wallet Withdrawal Events
-| Event Name                  | Description                        |
-|-----------------------------|------------------------------------|
-| `wallet.withdrawal.initiated`  | Wallet withdrawal initiated.    |
-| `wallet.withdrawal.processing` | Wallet withdrawal is in progress. |
-| `wallet.withdrawal.success`    | Wallet withdrawal was successful. |
-| `wallet.withdrawal.failed`     | Wallet withdrawal failed.         |
-| `wallet.withdrawal.rejected`   | Wallet withdrawal was rejected.    |
+| Event Name                     | Description                         |
+|--------------------------------|-------------------------------------|
+| `wallet.withdrawal.initiated`  | Wallet withdrawal initiated.        |
+| `wallet.withdrawal.processing` | Wallet withdrawal is in progress.   |
+| `wallet.withdrawal.settling`   | Wallet withdrawal is being settled. |
+| `wallet.withdrawal.success`    | Wallet withdrawal was successful.   |
+| `wallet.withdrawal.failed`     | Wallet withdrawal failed.           |
+| `wallet.withdrawal.rejected`   | Wallet withdrawal was rejected.     |
 
 
 ### Card Events
-| Event Name           | Description                        |
-|----------------------|------------------------------------|
-| `card.added`         | A new card has been added.          |
-| `card.images_uploaded` | Card images have been uploaded.   |
+| Event Name             | Description                        |
+|------------------------|------------------------------------|
+| `card.added`           | A new card has been added.         |
+| `card.images_uploaded` | Card images have been uploaded.    |
 
 
 ### Payment Events
-| Event Name                    | Description                            |
-|-------------------------------|----------------------------------------|
-| `payment.initiated`           | Payment was initiated.                 |
-| `payment.processing`          | Payment is being processed.            |
-| `payment.success`             | Payment was successful.                |
-| `payment.failed`              | Payment failed.                        |
-| `payment.rejected`            | Payment was rejected.                  |
-| `payment.refunded`            | Payment was refunded.                  |
-| `payment.processing_fee_refunded` | Processing fee for payment refunded. |
+| Event Name                    | Description                     |
+|-------------------------------|---------------------------------|
+| `payment.initiated`           | Payment was initiated.          |
+| `payment.processing`          | Payment is being processed.     |
+| `payment.settling`            | Payment is being settled.       |
+| `payment.success`             | Payment was successful.         |
+| `payment.failed`              | Payment failed.                 |
+| `payment.rejected`            | Payment was rejected.           |
+| `payment.refunded`            | Payment was refunded.           |
+| `payment.fee_refunded`        | Payment fee was refunded.       |
 
 ---
 
