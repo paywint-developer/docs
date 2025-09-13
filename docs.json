@@ -38,8 +38,7 @@
             "group": "KYB",
             "pages": [
               "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb",
-              "api-reference/kyb/submit-kyb-docs"
+              "api-reference/kyb/submit-user-kyb"
             ]
         },
         {
@@ -47,7 +46,9 @@
             "pages": [
               "api-reference/payment/create-payment",
               "api-reference/payment/get-payment",
-              "api-reference/payment/list-payments"
+              "api-reference/payment/list-payments",
+              "api-reference/payment/list-user-payments",
+              "api-reference/payment/list-user-received-payments"
             ]
         },
         {
@@ -55,6 +56,7 @@
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
                 "api-reference/bank-accounts/get-bank-account",
+                "api-reference/bank-accounts/set-default-account",
                 "api-reference/bank-accounts/list-accounts",
                 "api-reference/bank-accounts/release-micro-deposit",
                 "api-reference/bank-accounts/verify-micro-deposit",
@@ -77,6 +79,34 @@
               "api-reference/wallet/get-wallet",
               "api-reference/wallet/fund-wallet",
               "api-reference/wallet/withdraw-wallet-fund"
+            ]
+        },
+        {
+            "group": "Payee",
+            "pages": [
+              "api-reference/payee/create-payee",
+              "api-reference/payee/udpate-payee",
+              "api-reference/payee/get-payee",
+              "api-reference/payee/list-payee",
+              "api-reference/payee/delete-payee"
+            ]
+        },
+        {
+            "group": "Payee Bank Accounts",
+            "pages": [
+              "api-reference/payee-bank-accounts/add-payee-account",
+              "api-reference/payee-bank-accounts/get-payee-account",
+              "api-reference/payee-bank-accounts/list-payee-account",
+              "api-reference/payee-bank-accounts/delete-payee-account"
+            ]
+        },
+        {
+            "group": "Payee Cards",
+            "pages": [
+              "api-reference/payee-card/add-payee-card",
+              "api-reference/payee-card/get-payee-card",
+              "api-reference/payee-card/list-payee-card",
+              "api-reference/payee-card/delete-payee-card"
             ]
         }
     ]
