@@ -156,7 +156,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://implementing-cruise-pregnant-arena.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
