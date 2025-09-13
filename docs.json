@@ -45,6 +45,7 @@
             "group": "Payment",
             "pages": [
               "api-reference/payment/create-payment",
+              "api-reference/payment/mail-check",
               "api-reference/payment/get-payment",
               "api-reference/payment/list-payments",
               "api-reference/payment/list-user-payments",
@@ -108,6 +109,15 @@
               "api-reference/payee-card/list-payee-card",
               "api-reference/payee-card/delete-payee-card"
             ]
+        },
+        {
+          "group": "Payee Address",
+          "pages": [
+            "api-reference/payee-address/add-payee-address",
+            "api-reference/payee-address/list-payee-address",
+            "api-reference/payee-address/update-payee-address",
+            "api-reference/payee-address/delete-payee-address"
+          ]
         }
     ]
   },
@@ -146,7 +156,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://reviewer-two-chronicles-exp.trycloudflare.com/openapi.json",
+      "source": "https://navigate-colombia-incorrect-handheld.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
