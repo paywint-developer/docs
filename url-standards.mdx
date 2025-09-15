@@ -1,0 +1,183 @@
+---
+title: "URL Standards & Requirements"
+description: "Requirements and best practices for document URLs in the Paywint API"
+icon: "link"
+---
+
+## Overview
+
+When submitting documents through Paywint API endpoints (such as KYB verification), you must provide URLs that point directly to your document files. All URLs must meet strict security and format requirements for successful processing.
+
+---
+
+## Basic Requirements
+
+All document URLs must meet these requirements:
+
+- **HTTPS only** - URLs must use secure HTTPS protocol
+- **Publicly accessible** - No authentication required to access the file
+- **Direct file links** - URLs must point to the file itself, not a webpage
+- **Maximum 2,048 characters** - Keep URLs concise
+- **Proper format** - URLs must be valid and parseable
+
+### Valid URL Format
+```
+https://example-storage.com/documents/business-license.pdf
+```
+
+### Invalid URL Formats
+```
+http://example.com/document.pdf          (not HTTPS)
+https://example.com/view?file=doc.pdf    (not direct link)
+```
+
+---
+
+## Security Requirements
+
+### Protocol Requirements
+URLs must use secure HTTPS protocol only. Other protocols including insecure HTTP, local file systems, and script execution schemes are not permitted.
+
+### Network Access Restrictions
+For security reasons, URLs cannot resolve to:
+- Private or internal network addresses
+- Local development environments
+- Internal corporate domains or services
+- Administrative service ports
+
+All URLs must point to publicly accessible resources on standard web ports.
+
+---
+
+## File Requirements
+
+### File Size & Performance
+- **Maximum file size:** 7 MB
+- **Download timeout:** 10 seconds
+
+### Supported File Types
+File type support varies by endpoint. Common formats include:
+- **Documents:** PDF, DOCX, DOC, TXT
+- **Images:** JPEG, JPG, PNG, GIF
+
+<Note>
+Always check the specific endpoint documentation for exact file type requirements.
+</Note>
+
+---
+
+## Validation Process
+
+When you submit a URL, Paywint validates it through these steps:
+
+1. **Format check** - Verifies URL syntax and length
+2. **Security scan** - Checks against blocked patterns
+3. **DNS resolution** - Resolves hostname to IP address
+4. **IP validation** - Ensures IP is publicly accessible
+5. **File download** - Downloads and validates the file
+6. **Content check** - Verifies file type and size
+
+---
+
+## Cloud Storage Guidelines
+
+For cloud storage services, ensure you provide **direct download links**, not sharing or preview URLs
+
+### Popular Services Setup
+
+<AccordionGroup>
+<Accordion title="Google Drive">
+1. Right-click your file → Get link
+2. Change permissions to "Anyone with the link"
+3. Copy the file ID from the URL
+4. Use format: `https://drive.google.com/uc?export=download&id=FILE_ID`
+</Accordion>
+
+<Accordion title="Dropbox">
+1. Create a shared link for your file
+2. Change the `dl=0` parameter to `dl=1` in the URL
+3. Example: `https://dropbox.com/s/abc123/file.pdf?dl=1`
+</Accordion>
+
+<Accordion title="AWS S3">
+1. Upload file to a public S3 bucket
+2. Ensure bucket policy allows public read access
+3. Use the direct S3 URL: `https://bucket-name.s3.region.amazonaws.com/file-name`
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Best Practices
+
+### For Developers
+- Validate URLs client-side before API submission
+- Implement retry logic for network failures
+- Monitor file hosting service uptime
+- Use CDNs for better performance and reliability
+
+### For All Users
+- Keep files under 7 MB while maintaining document readability and image clarity
+- Use descriptive filenames and clean URLs
+- Have backup URLs ready for critical documents
+
+---
+
+## Troubleshooting
+
+### Common Errors
+
+<AccordionGroup>
+<Accordion title="URL uses blocked scheme">
+**Problem:** URL doesn't start with `https://`  
+**Solution:** Change `http://` to `https://` and ensure your host supports HTTPS
+</Accordion>
+
+<Accordion title="URL resolves to private IP address">
+**Problem:** URL points to internal/private server  
+**Solution:** Use public cloud storage instead of internal servers
+</Accordion>
+
+<Accordion title="File too large">
+**Problem:** File exceeds 7 MB limit  
+**Solution:** Compress or resize files. For PDFs, reduce image quality or split into multiple files
+</Accordion>
+
+<Accordion title="Unsupported content type">
+**Problem:** File format not supported by endpoint  
+**Solution:** Convert to supported format (usually PDF, DOCX, or JPEG/PNG)
+</Accordion>
+
+<Accordion title="Network error fetching URL">
+**Problem:** URL not accessible or server timeout  
+**Solution:** Verify URL works in browser, check hosting service status, ensure proper permissions
+</Accordion>
+</AccordionGroup>
+
+## Example URLs
+
+### Valid Examples
+```
+https://secure-docs.example.com/business-license.pdf
+https://cdn.mycompany.com/files/incorporation-certificate.jpg
+https://drive.google.com/uc?export=download&id=1ABC123def456
+https://assets.example.com/documents/proof-of-address.png
+```
+
+### Invalid Examples
+```
+http://example.com/document.pdf                    (not HTTPS)
+https://192.168.1.100/file.pdf                    (private IP)
+https://localhost:8080/doc.pdf                     (localhost)
+ftp://files.example.com/doc.pdf                    (wrong protocol)
+https://drive.google.com/file/d/123/view           (not direct download)
+https://example.com/document-10MB.pdf              (too large)
+```
+
+---
+
+## Need Help?
+
+- Check API error responses for specific validation details
+- Contact support for assistance with URL validation issues
+- Review endpoint-specific documentation for file type requirements

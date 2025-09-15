@@ -16,7 +16,8 @@
                 "introduction",
                 "environments",
                 "authentication",
-                "webhook"
+                "webhook",
+                "url-standards"
             ]
         },
         {
@@ -156,7 +157,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://navigate-colombia-incorrect-handheld.trycloudflare.com/openapi.json",
+      "source": "https://passed-shape-dominant-manuals.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
