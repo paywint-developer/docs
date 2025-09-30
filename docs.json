@@ -84,6 +84,14 @@
             ]
         },
         {
+            "group": "Check",
+            "pages": [
+              "api-reference/check/add-check-address",
+              "api-reference/check/update-check-address",
+              "api-reference/check/update-check-config"
+            ]
+        },
+        {
             "group": "Payee",
             "pages": [
               "api-reference/payee/create-payee",
@@ -157,7 +165,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://thunder-brilliant-solid-lease.trycloudflare.com/openapi.json",
+      "source": "https://expert-broader-communication-controlling.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
