@@ -37,7 +37,6 @@ Below is the complete list of webhook events sent by Paywint.
 ### KYC Events
 | Event Name      | Description                         |
 |-----------------|-------------------------------------|
-| `kyc.pending`   | KYC verification is pending review. |
 | `kyc.applied`   | User has submitted KYC details.     |
 | `kyc.approved`  | KYC verification has been approved. |
 | `kyc.rejected`  | KYC verification has been rejected. |
@@ -128,3 +127,13 @@ If your webhook endpoint fails to return a `2xx` HTTP response, Paywint will aut
 * If all attempts fail, Paywint will notify your account’s **admin email** with details of the failed event.
 
 > **Note:** To avoid missed events, ensure your webhook endpoint is highly available and returns `200 OK` quickly. Any internal processing should happen asynchronously to avoid missed events.
+
+---
+
+## Detailed Webhook Responses
+
+For complete webhook payload examples and detailed field descriptions for each event type, see our [Webhook Responses](/webhook-response) documentation page.
+
+<Card title="Webhook Responses" icon="code" href="/webhook-response">
+  View detailed webhook payload examples, field descriptions, and implementation guidance for all payment events.
+</Card>

@@ -52,9 +52,17 @@
             ]
         },
         {
+            "group": "Checkout",
+            "pages": [
+              "api-reference/payment/create-payment-link"
+          ]
+        },
+        {
             "group": "Bank Accounts",
             "pages": [
                 "api-reference/bank-accounts/add-bank-account",
+                "api-reference/bank-accounts/open-pw-bank",
+                "api-reference/bank-accounts/list-pw-bank-transactions",
                 "api-reference/bank-accounts/get-bank-account",
                 "api-reference/bank-accounts/set-default-account",
                 "api-reference/bank-accounts/list-accounts",
