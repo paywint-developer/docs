@@ -95,6 +95,7 @@
             "group": "Check",
             "pages": [
               "api-reference/check/add-check-address",
+              "api-reference/check/get-check-address-config",
               "api-reference/check/update-check-address",
               "api-reference/check/update-check-config"
             ]
@@ -173,7 +174,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://correctly-his-article-brakes.trycloudflare.com/openapi.json",
+      "source": "https://hazardous-injuries-webmaster-engaging.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
