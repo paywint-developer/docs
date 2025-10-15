@@ -174,7 +174,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://hazardous-injuries-webmaster-engaging.trycloudflare.com/openapi.json",
+      "source": "https://api.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
