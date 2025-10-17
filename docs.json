@@ -174,7 +174,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.pw.wintpay.com/openapi.json",
+      "source": "https://amy-labor-homes-hull.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
