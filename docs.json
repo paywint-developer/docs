@@ -9,134 +9,134 @@
   },
   "favicon": "/favicon.ico",
   "navigation": {
-      "groups": [
-        {
-            "group": "Get Started",
-            "pages": [
-                "introduction",
-                "environments",
-                "authentication",
-                "webhook",
-                "url-standards"
-            ]
-        },
-        {
-            "group": "Users",
-            "pages": [
-                "api-reference/users/create-user",
-                "api-reference/users/list-users",
-                "api-reference/users/get-user"
-            ]
-        },
-        {
-            "group": "KYC",
-            "pages": [
-                "api-reference/kyc/get-user-kyc",
-                "api-reference/kyc/get-user-kyc-link"
-            ]
-        },
-        {
-            "group": "KYB",
-            "pages": [
-              "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb"
-            ]
-        },
-        {
-            "group": "Payment",
-            "pages": [
-              "api-reference/payment/create-payment",
-              "api-reference/payment/mail-check",
-              "api-reference/payment/get-payment",
-              "api-reference/payment/list-payments",
-              "api-reference/payment/list-user-payments",
-              "api-reference/payment/list-user-received-payments"
-            ]
-        },
-        {
-            "group": "Checkout",
-            "pages": [
-              "api-reference/payment/create-payment-link"
-          ]
-        },
-        {
-            "group": "Bank Accounts",
-            "pages": [
-                "api-reference/bank-accounts/add-bank-account",
-                "api-reference/bank-accounts/open-pw-bank",
-                "api-reference/bank-accounts/list-pw-bank-transactions",
-                "api-reference/bank-accounts/get-bank-account",
-                "api-reference/bank-accounts/set-default-account",
-                "api-reference/bank-accounts/list-accounts",
-                "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-micro-deposit",
-                "api-reference/bank-accounts/delete-bank"
-            ]
-        },
-        {
-            "group": "Cards",
-            "pages": [
-              "api-reference/cards/add-card",
-              "api-reference/cards/update-card",
-              "api-reference/cards/get-card",
-              "api-reference/cards/list-cards",
-              "api-reference/cards/delete-card"
-            ]
-        },
-        {
-            "group": "Wallet",
-            "pages": [
-              "api-reference/wallet/get-wallet",
-              "api-reference/wallet/fund-wallet",
-              "api-reference/wallet/withdraw-wallet-fund"
-            ]
-        },
-        {
-            "group": "Check",
-            "pages": [
-              "api-reference/check/add-check-address",
-              "api-reference/check/get-check-address-config",
-              "api-reference/check/update-check-address",
-              "api-reference/check/update-check-config"
-            ]
-        },
-        {
-            "group": "Payee",
-            "pages": [
-              "api-reference/payee/create-payee",
-              "api-reference/payee/udpate-payee",
-              "api-reference/payee/get-payee",
-              "api-reference/payee/list-payee",
-              "api-reference/payee/delete-payee"
-            ]
-        },
-        {
-            "group": "Payee Bank Accounts",
-            "pages": [
-              "api-reference/payee-bank-accounts/add-payee-account",
-              "api-reference/payee-bank-accounts/get-payee-account",
-              "api-reference/payee-bank-accounts/list-payee-account",
-              "api-reference/payee-bank-accounts/delete-payee-account"
-            ]
-        },
-        {
-            "group": "Payee Cards",
-            "pages": [
-              "api-reference/payee-card/add-payee-card",
-              "api-reference/payee-card/get-payee-card",
-              "api-reference/payee-card/list-payee-card",
-              "api-reference/payee-card/delete-payee-card"
-            ]
-        },
-        {
-          "group": "Payee Address",
-          "pages": [
-            "api-reference/payee-address/add-payee-address",
-            "api-reference/payee-address/list-payee-address",
-            "api-reference/payee-address/update-payee-address",
-            "api-reference/payee-address/delete-payee-address"
-          ]
-        }
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "environments",
+          "authentication",
+          "webhook",
+          "url-standards"
+        ]
+      },
+      {
+        "group": "Users",
+        "pages": [
+          "api-reference/users/create-user",
+          "api-reference/users/list-users",
+          "api-reference/users/get-user"
+        ]
+      },
+      {
+        "group": "KYC",
+        "pages": [
+          "api-reference/kyc/get-user-kyc",
+          "api-reference/kyc/get-user-kyc-link"
+        ]
+      },
+      {
+        "group": "KYB",
+        "pages": [
+          "api-reference/kyb/get-user-kyb",
+          "api-reference/kyb/submit-user-kyb"
+        ]
+      },
+      {
+        "group": "Payment",
+        "pages": [
+          "api-reference/payment/create-payment",
+          "api-reference/payment/mail-check",
+          "api-reference/payment/get-payment",
+          "api-reference/payment/list-payments",
+          "api-reference/payment/list-user-payments",
+          "api-reference/payment/list-user-received-payments"
+        ]
+      },
+      {
+        "group": "Checkout",
+        "pages": [
+          "api-reference/payment/create-payment-link"
+        ]
+      },
+      {
+        "group": "Bank Accounts",
+        "pages": [
+          "api-reference/bank-accounts/add-bank-account",
+          "api-reference/bank-accounts/open-pw-bank",
+          "api-reference/bank-accounts/list-pw-bank-transactions",
+          "api-reference/bank-accounts/get-bank-account",
+          "api-reference/bank-accounts/set-default-account",
+          "api-reference/bank-accounts/list-accounts",
+          "api-reference/bank-accounts/release-micro-deposit",
+          "api-reference/bank-accounts/verify-micro-deposit",
+          "api-reference/bank-accounts/delete-bank"
+        ]
+      },
+      {
+        "group": "Cards",
+        "pages": [
+          "api-reference/cards/add-card",
+          "api-reference/cards/update-card",
+          "api-reference/cards/get-card",
+          "api-reference/cards/list-cards",
+          "api-reference/cards/delete-card"
+        ]
+      },
+      {
+        "group": "Wallet",
+        "pages": [
+          "api-reference/wallet/get-wallet",
+          "api-reference/wallet/fund-wallet",
+          "api-reference/wallet/withdraw-wallet-fund"
+        ]
+      },
+      {
+        "group": "Check",
+        "pages": [
+          "api-reference/check/add-check-address",
+          "api-reference/check/get-check-address-config",
+          "api-reference/check/update-check-address",
+          "api-reference/check/update-check-config"
+        ]
+      },
+      {
+        "group": "Payee",
+        "pages": [
+          "api-reference/payee/create-payee",
+          "api-reference/payee/udpate-payee",
+          "api-reference/payee/get-payee",
+          "api-reference/payee/list-payee",
+          "api-reference/payee/delete-payee"
+        ]
+      },
+      {
+        "group": "Payee Bank Accounts",
+        "pages": [
+          "api-reference/payee-bank-accounts/add-payee-account",
+          "api-reference/payee-bank-accounts/get-payee-account",
+          "api-reference/payee-bank-accounts/list-payee-account",
+          "api-reference/payee-bank-accounts/delete-payee-account"
+        ]
+      },
+      {
+        "group": "Payee Cards",
+        "pages": [
+          "api-reference/payee-card/add-payee-card",
+          "api-reference/payee-card/get-payee-card",
+          "api-reference/payee-card/list-payee-card",
+          "api-reference/payee-card/delete-payee-card"
+        ]
+      },
+      {
+        "group": "Payee Address",
+        "pages": [
+          "api-reference/payee-address/add-payee-address",
+          "api-reference/payee-address/list-payee-address",
+          "api-reference/payee-address/update-payee-address",
+          "api-reference/payee-address/delete-payee-address"
+        ]
+      }
     ]
   },
   "logo": {
@@ -174,7 +174,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://executed-january-shelf-fan.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
