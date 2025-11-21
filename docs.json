@@ -9,72 +9,87 @@
   },
   "favicon": "/favicon.ico",
   "navigation": {
-      "groups": [
-        {
-            "group": "Get Started",
-            "pages": [
-                "introduction",
-                "environments",
-                "authentication",
-                "webhook",
-                "url-standards"
-            ]
-        },
-        {
+    "tabs": [
+      {
+        "tab": "Get Started",
+        "icon": "rocket",
+        "pages": [
+          "get-started/overview",
+          "get-started/quickstart",
+          "get-started/environments",
+          "get-started/authentication"
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "square-terminal",
+        "groups": [
+          {
             "group": "Users",
+            "expanded": false,
             "pages": [
-                "api-reference/users/create-user",
-                "api-reference/users/list-users",
-                "api-reference/users/get-user"
+              "api-reference/users/overview",
+              "api-reference/users/create-user",
+              "api-reference/users/list-users",
+              "api-reference/users/get-user"
             ]
-        },
-        {
-            "group": "KYC",
+          },
+          {
+            "group": "KYC & KYB",
+            "expanded": false,
             "pages": [
-                "api-reference/kyc/get-user-kyc",
-                "api-reference/kyc/get-user-kyc-link"
+              "api-reference/compliance/overview",
+              "api-reference/compliance/kyc/get-user-kyc-link",
+              "api-reference/compliance/kyc/get-user-kyc",
+              "api-reference/compliance/kyb/submit-user-kyb",
+              "api-reference/compliance/kyb/get-user-kyb"
             ]
-        },
-        {
-            "group": "KYB",
+          },
+          {
+            "group": "Payments",
+            "expanded": false,
             "pages": [
-              "api-reference/kyb/get-user-kyb",
-              "api-reference/kyb/submit-user-kyb"
-            ]
-        },
-        {
-            "group": "Payment",
-            "pages": [
+              "api-reference/payment/overview",
               "api-reference/payment/create-payment",
               "api-reference/payment/mail-check",
               "api-reference/payment/get-payment",
               "api-reference/payment/list-payments",
-              "api-reference/payment/list-user-payments",
-              "api-reference/payment/list-user-received-payments"
+              "api-reference/payment/list-payments-sent",
+              "api-reference/payment/list-payments-received"
             ]
-        },
-        {
-            "group": "Checkout",
+          },
+          {
+            "group": "Accept payments",
+            "expanded": false,
             "pages": [
-              "api-reference/payment/create-payment-link"
-          ]
-        },
-        {
+              "api-reference/payment/accept-payments/overview",
+              "api-reference/payment/accept-payments/create-payment-link"
+            ]
+          },
+          {
             "group": "Bank Accounts",
+            "expanded": false,
             "pages": [
-                "api-reference/bank-accounts/add-bank-account",
-                "api-reference/bank-accounts/open-pw-bank",
-                "api-reference/bank-accounts/list-pw-bank-transactions",
-                "api-reference/bank-accounts/get-bank-account",
-                "api-reference/bank-accounts/set-default-account",
-                "api-reference/bank-accounts/list-accounts",
-                "api-reference/bank-accounts/release-micro-deposit",
-                "api-reference/bank-accounts/verify-micro-deposit",
-                "api-reference/bank-accounts/delete-bank"
+              "api-reference/bank-accounts/add-bank-account",
+              "api-reference/bank-accounts/get-bank-account",
+              "api-reference/bank-accounts/set-default-account",
+              "api-reference/bank-accounts/list-accounts",
+              "api-reference/bank-accounts/release-micro-deposit",
+              "api-reference/bank-accounts/verify-micro-deposit",
+              "api-reference/bank-accounts/delete-bank"
             ]
-        },
-        {
+          },
+          {
+            "group": "Paywint Bank Accounts",
+            "expanded": false,
+            "pages": [
+              "api-reference/bank-accounts/open-pw-bank",
+              "api-reference/bank-accounts/list-pw-bank-transactions"
+            ]
+          },
+          {
             "group": "Cards",
+            "expanded": false,
             "pages": [
               "api-reference/cards/add-card",
               "api-reference/cards/update-card",
@@ -82,65 +97,104 @@
               "api-reference/cards/list-cards",
               "api-reference/cards/delete-card"
             ]
-        },
-        {
+          },
+          {
             "group": "Wallet",
+            "expanded": false,
             "pages": [
               "api-reference/wallet/get-wallet",
               "api-reference/wallet/fund-wallet",
               "api-reference/wallet/withdraw-wallet-fund"
             ]
-        },
-        {
+          },
+          {
             "group": "Check",
+            "expanded": false,
             "pages": [
               "api-reference/check/add-check-address",
               "api-reference/check/update-check-address",
               "api-reference/check/update-check-config"
             ]
-        },
-        {
-            "group": "Payee",
+          },
+          {
+            "group": "Payee Management",
+            "expanded": false,
             "pages": [
               "api-reference/payee/create-payee",
-              "api-reference/payee/udpate-payee",
+              "api-reference/payee/update-payee",
               "api-reference/payee/get-payee",
               "api-reference/payee/list-payee",
               "api-reference/payee/delete-payee"
             ]
-        },
-        {
+          },
+          {
             "group": "Payee Bank Accounts",
+            "expanded": false,
             "pages": [
               "api-reference/payee-bank-accounts/add-payee-account",
               "api-reference/payee-bank-accounts/get-payee-account",
               "api-reference/payee-bank-accounts/list-payee-account",
               "api-reference/payee-bank-accounts/delete-payee-account"
             ]
-        },
-        {
+          },
+          {
             "group": "Payee Cards",
+            "expanded": false,
             "pages": [
               "api-reference/payee-card/add-payee-card",
               "api-reference/payee-card/get-payee-card",
               "api-reference/payee-card/list-payee-card",
               "api-reference/payee-card/delete-payee-card"
             ]
-        },
-        {
-          "group": "Payee Address",
-          "pages": [
-            "api-reference/payee-address/add-payee-address",
-            "api-reference/payee-address/list-payee-address",
-            "api-reference/payee-address/update-payee-address",
-            "api-reference/payee-address/delete-payee-address"
-          ]
-        }
+          },
+          {
+            "group": "Payee Addresses",
+            "expanded": false,
+            "pages": [
+              "api-reference/payee-address/add-payee-address",
+              "api-reference/payee-address/list-payee-address",
+              "api-reference/payee-address/update-payee-address",
+              "api-reference/payee-address/delete-payee-address"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Webhooks",
+        "icon": "webhook",
+        "pages": [
+          "webhooks/overview",
+          "webhooks/setup",
+          "webhooks/signature-verification",
+          "webhooks/events",
+          "webhooks/event-types",
+          "webhooks/retry-behavior"
+        ]
+      },
+      {
+        "tab": "Resources",
+        "icon": "book-open",
+        "pages": [
+          "resources/faq",
+          "resources/changelog",
+          "resources/glossary"
+        ]
+      }
     ]
   },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "interaction": {
+    "drilldown": false
+  },
   "logo": {
-    "light": "/logo/app-logo-dark.png",
-    "dark": "/logo/app-logo-dark.png"
+    "light": "/assets/logo/app-logo-dark.png",
+    "dark": "/assets/logo/app-logo-light.png"
+  },
+  "fonts": {
+    "family": "Inter",
+    "weight": 400
   },
   "navbar": {
     "links": [
@@ -168,12 +222,12 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/introduction"
+      "destination": "/get-started/overview"
     }
   ],
   "api": {
     "openapi": {
-      "source": "https://sponsorship-chem-tennis-essentials.trycloudflare.com/openapi.json",
+      "source": "https://officials-outsourcing-strict-located.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },

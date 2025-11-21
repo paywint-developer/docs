@@ -1,0 +1,43 @@
+---
+title: "payment.failed"
+description: "Sent when a payment attempt fails due to insufficient funds or gateway errors."
+icon: "x-circle"
+---
+
+The `payment.failed` event occurs when a payment attempt fails — this can happen due to insufficient funds, declined cards, or network errors.
+
+---
+
+## Example Payload
+
+```json
+{
+  "event": "payment.failed",
+  "id": "77b568f8-cc38-4b5c-91aa-ac3c77020963",
+  "data": {
+    "payment_id": "ac4bedda-f370-4ac4-a61e-e1761a5a51b9",
+    "status": "failed",
+    "amount": 599,
+    "failed_reason": "Transaction could not be processed. Try again later."
+  },
+  "eventGeneratedTime": 1756452659.868249
+}
+````
+
+---
+
+## Event Fields
+
+<ResponseField name="failed_reason" type="string">
+  Description of the reason for failure.
+</ResponseField>
+
+---
+
+## Handling the Event
+
+Use this event to:
+
+* Notify users that their payment failed.
+* Log failure reasons for debugging or analytics.
+* Optionally provide a retry option in your UI.

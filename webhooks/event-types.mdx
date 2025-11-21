@@ -1,0 +1,77 @@
+---
+title: "Event Types"
+description: "Complete list of webhook event types sent by Paywint."
+icon: "calendars"
+---
+
+Below is the list of all webhook event types Paywint can send to your webhook endpoint.  
+Each corresponds to a significant system action or user state update.
+
+---
+
+## KYC Events
+| Event               | Description                         |
+|---------------------|-------------------------------------|
+| `kyc.applied`       | User submitted KYC details.         |
+| `kyc.approved`      | KYC verification approved.          |
+| `kyc.rejected`      | KYC verification rejected.          |
+| `kyc.failed`        | KYC verification failed.            |
+| `kyc.completed`     | KYC process completed.              |
+| `kyc.deleted`       | KYC record deleted.                 |
+
+
+## KYB Events
+| Event               | Description                         |
+|---------------------|-------------------------------------|
+| `kyb.approved`      | KYB verification approved.          |
+| `kyb.rejected`      | KYB verification rejected.          |
+| `kyb.deleted`       | KYB record deleted.                 |
+
+
+## Wallet Funding Events
+| Event                       | Description                           |
+|------------------------------|--------------------------------------|
+| `wallet.funding.initiated`   | Wallet funding request initiated.    |
+| `wallet.funding.processing`  | Wallet funding in progress.          |
+| `wallet.funding.success`     | Wallet funding successful.           |
+| `wallet.funding.failed`      | Wallet funding failed.               |
+| `wallet.funding.rejected`    | Wallet funding rejected.             |
+
+
+## Wallet Withdrawal Events
+| Event                          | Description                           |
+|--------------------------------|---------------------------------------|
+| `wallet.withdrawal.initiated`  | Withdrawal initiated.                 |
+| `wallet.withdrawal.processing` | Withdrawal in progress.               |
+| `wallet.withdrawal.settling`   | Withdrawal settling.                  |
+| `wallet.withdrawal.success`    | Withdrawal successful.                |
+| `wallet.withdrawal.failed`     | Withdrawal failed.                    |
+| `wallet.withdrawal.rejected`   | Withdrawal rejected.                  |
+
+
+## Card Events
+| Event                 | Description                      |
+|-----------------------|----------------------------------|
+| `card.added`          | A new card was added.            |
+| `card.images_uploaded`| Card images have been uploaded.  |
+
+
+## Payment Events
+| Event                                                            | Description                                |
+|------------------------------------------------------------------|--------------------------------------------|
+| [payment.opened](/webhooks/events/payment-opened)                | Payment link opened by user.               |
+| [payment.initiated](/webhooks/events/payment-initiated)          | Payment initiated.                         |
+| [payment.processing](/webhooks/events/payment-processing)        | Payment requires processing or review.     |
+| [payment.settling](/webhooks/events/payment-settling)            | Payment settling.                          |
+| [payment.success](/webhooks/events/payment-success)              | Payment successfully completed.            |
+| [payment.failed](/webhooks/events/payment-failed)                | Payment attempt failed.                    |
+| [payment.rejected](/webhooks/events/payment-rejected)            | Payment rejected.                          |
+| [payment.refunded](/webhooks/events/payment-refunded)            | Payment refunded.                          |
+| [payment.fee_refunded](/webhooks/events/payment-fee-refunded)    | Payment fee refunded.                      |
+
+
+## Next Steps
+
+- Learn to **verify webhook signatures** to ensure authenticity.  
+- Review **retry behavior** for undelivered events [Retry Behavior](/webhooks/retry-behavior).  
+- Check **event-specific payloads** in the [Event Reference](/webhooks/webhook-response).

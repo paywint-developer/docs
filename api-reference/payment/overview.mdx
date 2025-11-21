@@ -1,0 +1,93 @@
+---
+title: "Payments Overview"
+description: ""
+icon: "dollar-sign"
+---
+
+
+The Payments API allows your platform to initiate money movement **from one of your registered users to another user or payee**.  
+Payments can be funded through a user’s **wallet**, **card**, **bank (ACH)**, or **Paywint bank account**, and each method follows its own processing timeline.
+
+This section covers all APIs related to:
+- Sending money to a user or payee
+- Executing transfers using wallet, card, ACH, or Paywint Bank
+- Calculating processing and delivery fees
+- Mailing physical checks
+- Retrieving sent or received payment history
+- Fetching payment details by ID
+
+---
+
+## How Payments Work
+
+Before initiating a payment, your platform must:
+1. **Create the user** in Paywint  
+2. Add at least one **funding method** to the user (wallet, card, bank, or Paywint bank account)  
+3. **Create a payee** for the user (for card, bank, or check payments)  
+
+Once these steps are complete, the business can initiate payments using the `/create-payment` endpoint.
+
+---
+
+## Supported Payment Methods
+
+### **Wallet (Instant)**
+- Primary and fastest method  
+- Amount is deducted from the payer’s Paywint wallet and instantly delivered to the payee  
+- No bank delays and low processing overhead  
+
+### **Card (1–2 business days)**
+- Moves money using the payer’s linked debit card  
+- Processing may take up to two business days  
+- Typically used when users do not maintain a wallet balance  
+
+### **Bank ACH (3–4 business days)**
+- Uses the payer’s linked bank account  
+- Slowest but commonly used for higher-value payments  
+- Standard ACH processing timelines apply  
+
+### **Paywint Bank Account**
+- For users with a Paywint-issued virtual account  
+- Seamless internal transfer flow  
+- Fast and fully traceable  
+
+---
+
+## Payment Flows Covered in This Section
+
+### **Create Payment**
+Initiates a payment between two users or a user and their payee.  
+The API:
+- Validates the payer, payee, wallet, and payment method  
+- Calculates processing and delivery fees  
+- Executes the correct flow depending on payment method  
+- Generates transaction notifications  
+- Triggers relevant webhooks  
+
+### **List Payments**
+Retrieve:
+- All platform payments  
+- All payments initiated by a specific user  
+- All payments received by a specific user  
+
+Includes pagination support.
+
+### **Get Payment**
+Fetch a payment’s complete details using its unique ID.
+
+### **Mail Check Payments**
+Send physical checks via USPS First Class, Certified, Overnight, and Two-Day delivery.  
+Supports PDF attachments (up to 7MB, 10 pages).
+
+---
+
+## When to Use the Payments API
+
+Use the Payments API when your platform needs to:
+- Allow users to send money to each other
+- Pay contractors, service providers, or merchants
+- Support card, bank, wallet, or Paywint bank transfers
+- Generate physical checks for offline payees
+- Retrieve or audit historical outgoing/incoming payments
+
+For collecting payments **from** customers (e-commerce/checkout), see **Accept Payments**.

@@ -1,0 +1,12 @@
+---
+title: "Signature Verification"
+description: "Verify that webhook payloads are securely delivered by Paywint."
+icon: "shield"
+---
+
+## Security Recommendations
+
+* Require **HTTPS** and validate certificates.
+* Enforce a **timestamp tolerance window** (e.g., 5 minutes).
+* **Log and monitor** verification failures.
+* Respond with **`200 OK` only after** successful verification.
