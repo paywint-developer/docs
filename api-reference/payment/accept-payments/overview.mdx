@@ -116,6 +116,52 @@ Use a prebuilt checkout page to start accepting online payments.
       <img src="/assets/checkout/embedded-components.png" alt="Embedded components" />
     </Frame>
 
+    <Steps>
+      <Step title="Create a Checkout Session">
+        Your backend calls the (upcoming) **Checkout Session API**, passing the payer details,  
+        amount, and any optional metadata.  
+        Paywint returns a short-lived <code>session_token</code>.
+      </Step>
+
+      <Step title="Initialize the Paywint Elements SDK">
+        On your front-end, load the Paywint Checkout SDK and pass the <code>session_token</code>,  
+        enabled payment methods (wallet, card), amount, and user details.  
+        The SDK returns Payment Elements, which you can place anywhere inside your UI.
+      </Step>
+
+      <Step title="Render the Elements">
+        Add the generated UI components (for example, card input, wallet,  
+        and confirmation button) into your page.  
+        These components are fully customizable and adapt to your layout.
+      </Step>
+
+      <Step title="SDK verifies the session">
+        When initialized, the SDK calls Paywint’s backend with the provided session token.  
+        Paywint verifies the session, validates the payer, and sends an OTP to the user  
+        (valid for 15 minutes) to authorize the payment.
+      </Step>
+
+      <Step title="Customer enters OTP and completes payment">
+        The user enters the OTP and provides required payment details in the Elements UI.  
+        The SDK sends this information to Paywint’s backend to complete the payment.
+      </Step>
+
+      <Step title="Receive the payment outcome">
+        After processing the payment, Paywint:
+        - Responds to the SDK with the payment result  
+        - Sends webhook notifications to your backend  
+        - Updates the payment’s lifecycle status  
+        
+        Your front-end can display a success, failure, or expired OTP message based on  
+        the result returned by the SDK.
+      </Step>
+    </Steps>
+
+    <Note>
+      Paywint Elements is currently in development.  
+      The full API reference, SDK functions, and sample integrations will be added  
+      as the feature becomes available.
+    </Note>
   </Tab>
 
 </Tabs>

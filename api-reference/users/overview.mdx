@@ -1,23 +1,117 @@
 ---
-title: "Users Mangement"
-description: "Register and manage users within the Paywint system to enable seamless integration with our financial services."
+title: "User Management"
+description: "Register and manage users in Paywint to enable payments, wallets, and other financial services."
 icon: "user"
 ---
 
-## Available Endpoints
+## Overview
 
-### 1. **Create User**  
-   Register a new user on Paywint’s platform. This step is necessary before users can interact with your platform's financial features.
+User management is the foundation of your Paywint integration.  
+Every financial action—payments, wallet transfers, payees, card linking, and checkout—starts with a registered user.
 
-### 2. **List Users**  
-   Retrieve a list of all users registered with your platform, making it easier to manage user data.
+---
 
-### 3. **Get User**  
-   Retrieve detailed information about a specific user, including their status, wallets, and transaction history.
+## Merchant Dashboard
+
+Manage users directly from the merchant dashboard.  
+View user details, verification status, wallet balances, payment activity, and more.
+
+<Frame>
+  <img src="/assets/merchant/manage-users.png" alt="User management dashboard" />
+</Frame>
+
+<CardGroup cols={2}>
+  <Card
+    title="Sandbox Dashboard"
+    icon="gamepad"
+    href="https://sandbox.merchant.paywint.com"
+    arrow="true"
+    cta="Open Sandbox"
+  >
+    Access your sandbox merchant dashboard for testing and integration.
+  </Card>
+
+  <Card
+    title="Production Dashboard"
+    icon="globe"
+    href="https://merchant.paywint.com"
+    arrow="true"
+    cta="Open Production"
+  >
+    Manage live users and financial operations in production.
+  </Card>
+</CardGroup>
+
+---
+
+## APIs
+
+Use the User Management API to create, list, and retrieve users.  
+These endpoints are required for onboarding users into your platform and enabling any financial features.
+
+### **1. Create User**
+Register a new user under your platform.  
+This is required before linking bank accounts, adding cards, sending payments, or assigning payees.
+
+### **2. List Users**
+Retrieve all users registered under your Paywint platform account.  
+Useful for dashboards, internal tools, or syncing user data.
+
+### **3. Get User**
+Fetch detailed user information including:
+- Profile details  
+- KYC/KYB verification status  
+- Wallet balances  
+- Linked funding methods  
+- Transaction-related metadata  
 
 ---
 
 ## Key Use Cases
 
-- **User Registration**: Use `Create User` to register new users on Paywint, enabling them to interact with payments, wallets, and other financial features.
-- **Data Retrieval**: With `List Users` and `Get User`, you can manage and access up-to-date user data for seamless integration and operations.
+### **Onboarding Users**
+Use **Create User** to register customers, contractors, merchants, sellers, or anyone who needs to send or receive payments.
+
+### **Syncing User Data**
+Use **List Users** to build internal dashboards or keep your user base in sync.
+
+### **Displaying User Details**
+Use **Get User** to show balances, verification status, or financial capabilities inside your application.
+
+---
+
+## User Workflow with Paywint
+
+<Steps>
+   <Step title="Register the user">
+      Call [Create User](/api-reference/users/create-user) to create a Paywint user record and obtain a Paywint User ID.
+   </Step>
+
+   <Step title="Compliance requirements">
+      Wallet-to-wallet payments do not require any compliance checks.  
+      Other payment methods—such as bank transfers, ACH, or card-based payouts—may require the user to complete necessary [KYC](/api-reference/compliance/kyc/get-user-kyc-link)/[KYB](/api-reference/compliance/kyb/submit-user-kyb) steps depending on usage and regulatory rules.
+   </Step>
+
+   <Step title="User can access financial features">
+      Users can 
+      [add bank accounts](/api-reference/bank-accounts/add-bank-account),
+      [add cards](/api-reference/cards/add-card),
+      [create payees](/api-reference/payee/create-payee),
+      and use their [Paywint wallet](/api-reference/wallet/get-wallet).  
+      Most features are available by default, and some advanced capabilities may require contacting the Paywint support team.
+   </Step>
+
+   <Step title="Start processing payments">
+      Users can immediately make wallet-to-wallet payments.  
+      For other payment types, usage depends on whether required verification steps have been completed.
+   </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+- Always store the **Paywint User ID** to map internal users to Paywint.  
+- Ensure KYC/KYB is completed before initiating payments.  
+- Use <code>Get User</code> regularly to keep user status and balance data updated.  
+- Use the dashboard for manual review, troubleshooting, and support operations.
