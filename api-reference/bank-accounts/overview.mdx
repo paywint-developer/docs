@@ -30,7 +30,7 @@ Bank accounts may be used for:
 
 <CardGroup cols={3}>
 
-  <Card title="Add Bank Account" icon="plus" href="/api-reference/bank-accounts/add-bank-account" arrow="true">
+  <Card title="Add Bank Account" icon="plus" href="/api-reference/bank-accounts/add" arrow="true">
     Create a new bank account and link it to a user.
   </Card>
 
@@ -46,15 +46,15 @@ Bank accounts may be used for:
 
 <CardGroup cols={3}>
 
-  <Card title="Get Bank Account" icon="bank" href="/api-reference/bank-accounts/get-bank-account" arrow="true">
+  <Card title="Get Bank Account" icon="bank" href="/api-reference/bank-accounts/get" arrow="true">
     Retrieve details of a specific bank account.
   </Card>
 
-  <Card title="List Bank Accounts" icon="list" href="/api-reference/bank-accounts/list-accounts" arrow="true">
+  <Card title="List Bank Accounts" icon="list" href="/api-reference/bank-accounts/list" arrow="true">
     Get all bank accounts linked to a user.
   </Card>
 
-  <Card title="Delete Bank Account" icon="trash" href="/api-reference/bank-accounts/delete-bank" arrow="true">
+  <Card title="Delete Bank Account" icon="trash" href="/api-reference/bank-accounts/delete" arrow="true">
     Remove a bank account that belongs to a user.
   </Card>
 
@@ -70,7 +70,7 @@ The verification flow is completed in three steps:
 <Steps>
 
   <Step title="1. Add the bank account">
-    Call <code>[Add Bank Account](/api-reference/bank-accounts/add-bank-account)</code> 
+    Call <code>[Add Bank Account](/api-reference/bank-accounts/add)</code> 
     with the account number, routing number, bank details, and account type.  
     This adds the bank account to the user’s profile.
   </Step>
@@ -98,21 +98,21 @@ The verification flow is completed in three steps:
 <Steps>
 
   <Step title="Retrieve account details">
-    Use <code>[Get Bank Account](/api-reference/bank-accounts/get-bank-account)</code>
+    Use <code>[Get Bank Account](/api-reference/bank-accounts/get)</code>
     to access account type, last 4 digits, routing number, verification status, and metadata.
   </Step>
 
   <Step title="List all accounts">
-    Use <code>[List Bank Accounts](/api-reference/bank-accounts/list-bank-accounts)</code>
+    Use <code>[List Bank Accounts](/api-reference/bank-accounts/list)</code>
     to fetch all accounts linked to a user, ordered by most recently added.
   </Step>
 
   <Step title="Set a default bank account">
-    Use <code>[Set Default](/api-reference/bank-accounts/set-default-bank-account)</code> to switch the default account.
+    Use <code>[Set Default](/api-reference/bank-accounts/set-default)</code> to switch the default account.
   </Step>
 
   <Step title="Delete an account">
-    Use <code>[Delete Bank Account](/api-reference/bank-accounts/delete-bank-account)</code> 
+    Use <code>[Delete Bank Account](/api-reference/bank-accounts/delete)</code> 
     to remove an account.  
     If the deleted account was default, the next most recent account becomes default automatically.
   </Step>
