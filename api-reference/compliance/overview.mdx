@@ -19,11 +19,11 @@ KYC is handled through Paywint’s integrated **Persona** flow.
 Your platform calls the API to obtain a **verification link**, and the user completes KYC in a hosted or embedded Persona widget.
 
 <CardGroup cols={2}>
-  <Card title="Submit KYC" icon="external-link" href="/api-reference/compliance/kyc/get-user-kyc-link" arrow="true">
+  <Card title="Submit KYC" icon="external-link" href="/api-reference/compliance/kyc/create-enquiry-link" arrow="true">
     Retrieve a verification link to initiate or resume KYC for a user.
   </Card>
   
-  <Card title="Get KYC Status" icon="list" href="/api-reference/compliance/kyc/get-user-kyc" arrow="true">
+  <Card title="Get KYC Status" icon="list" href="/api-reference/compliance/kyc/get" arrow="true">
     Fetch KYC details after verification is completed.
   </Card>
 </CardGroup>
@@ -52,7 +52,7 @@ Open this link in:
     <Steps>
       <Step title="Call Submit KYC">
         Your backend calls  
-        [Submit KYC](/api-reference/compliance/kyc/get-user-kyc-link)  
+        [Submit KYC](/api-reference/compliance/kyc/create-enquiry-link)  
         to retrieve the <code>inquiry_url</code>.
       </Step>
 
@@ -73,7 +73,7 @@ Open this link in:
       </Step>
 
       <Step title="Fetch KYC">
-        Your server calls [Get KYC](/api-reference/compliance/kyc/get-user-kyc) to retrieve verification details and status.
+        Your server calls [Get KYC](/api-reference/compliance/kyc/get) to retrieve verification details and status.
       </Step>
     </Steps>
   </Tab>
@@ -91,7 +91,7 @@ Open this link in:
     <Steps>
       <Step title="Call Submit KYC">
         Your backend requests the <code>inquiry_url</code> using  
-        [Submit KYC](/api-reference/compliance/kyc/get-user-kyc-link).
+        [Submit KYC](/api-reference/compliance/kyc/create-enquiry-link).
       </Step>
 
       <Step title="Redirect the user">
@@ -112,7 +112,7 @@ Open this link in:
       </Step>
 
       <Step title="Fetch updated KYC">
-        Your server fetches the user’s updated verification details using [Get KYC](/api-reference/compliance/kyc/get-user-kyc).
+        Your server fetches the user’s updated verification details using [Get KYC](/api-reference/compliance/kyc/get).
       </Step>
     </Steps>
   </Tab>
@@ -125,11 +125,11 @@ Open this link in:
 KYB verifies business information such as legal entity details, documents, EIN, and formation data.
 
 <CardGroup cols={2}>
-  <Card title="Submit KYB" icon="external-link" href="/api-reference/compliance/kyb/submit-user-kyb" arrow="true">
+  <Card title="Submit KYB" icon="external-link" href="/api-reference/compliance/kyb/submit" arrow="true">
     Submit business information and mandatory supporting documents.
   </Card>
   
-  <Card title="Get KYB Status" icon="list" href="/api-reference/compliance/kyb/get-user-kyb" arrow="true">
+  <Card title="Get KYB Status" icon="list" href="/api-reference/compliance/kyb/get" arrow="true">
     Retrieve business verification results and document metadata.
   </Card>
 </CardGroup>
@@ -152,7 +152,7 @@ Submitting KYB requires:
 
 <Steps>
   <Step title="Submit KYB">
-    Make call to [Submit KYB](/api-reference/compliance/kyb/submit-user-kyb) with business information and document URLs.
+    Make call to [Submit KYB](/api-reference/compliance/kyb/submit) with business information and document URLs.
   </Step>
 
   <Step title="Paywint validates documents">
@@ -168,7 +168,7 @@ Submitting KYB requires:
   </Step>
 
   <Step title="Retrieve KYB record">
-    Your server calls [Get KYB](/api-reference/compliance/kyb/get-user-kyb) to read the latest business verification data.
+    Your server calls [Get KYB](/api-reference/compliance/kyb/get) to read the latest business verification data.
   </Step>
 </Steps>
 
