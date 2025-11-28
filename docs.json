@@ -227,7 +227,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://chips-wallpapers-bless-represented.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
