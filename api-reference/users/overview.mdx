@@ -84,20 +84,20 @@ Use **Get User** to show balances, verification status, or financial capabilitie
 
 <Steps>
    <Step title="Register the user">
-      Call [Create User](/api-reference/users/create-user) to create a Paywint user record and obtain a Paywint User ID.
+      Call [Create User](/api-reference/users/create) to create a Paywint user record and obtain a Paywint User ID.
    </Step>
 
    <Step title="Compliance requirements">
       Wallet-to-wallet payments do not require any compliance checks.  
-      Other payment methods—such as bank transfers, ACH, or card-based payouts—may require the user to complete necessary [KYC](/api-reference/compliance/kyc/get-user-kyc-link)/[KYB](/api-reference/compliance/kyb/submit-user-kyb) steps depending on usage and regulatory rules.
+      Other payment methods—such as bank transfers, ACH, or card-based payouts—may require the user to complete necessary [KYC](/api-reference/compliance/kyc/create-enquiry-link)/[KYB](/api-reference/compliance/kyb/submit) steps depending on usage and regulatory rules.
    </Step>
 
    <Step title="User can access financial features">
       Users can 
-      [add bank accounts](/api-reference/bank-accounts/add-bank-account),
-      [add cards](/api-reference/cards/add-card),
+      [add bank accounts](/api-reference/bank-accounts/add),
+      [add cards](/api-reference/cards/add),
       [create payees](/api-reference/payee/create-payee),
-      and use their [Paywint wallet](/api-reference/wallet/get-wallet).  
+      and use their [Paywint wallet](/api-reference/wallet/get).  
       Most features are available by default, and some advanced capabilities may require contacting the Paywint support team.
    </Step>
 
