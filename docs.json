@@ -70,6 +70,7 @@
             "group": "Bank Accounts",
             "expanded": false,
             "pages": [
+              "api-reference/bank-accounts/overview",
               "api-reference/bank-accounts/add-bank-account",
               "api-reference/bank-accounts/get-bank-account",
               "api-reference/bank-accounts/set-default-account",
