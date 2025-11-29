@@ -137,22 +137,22 @@
             "group": "Payee Bank Accounts",
             "expanded": false,
             "pages": [
-              "api-reference/payee-bank-accounts/overview",
-              "api-reference/payee-bank-accounts/add",
-              "api-reference/payee-bank-accounts/get",
-              "api-reference/payee-bank-accounts/list",
-              "api-reference/payee-bank-accounts/delete"
+              "api-reference/payees/bank-accounts/overview",
+              "api-reference/payees/bank-accounts/add",
+              "api-reference/payees/bank-accounts/get",
+              "api-reference/payees/bank-accounts/list",
+              "api-reference/payees/bank-accounts/delete"
             ]
           },
           {
             "group": "Payee Cards",
             "expanded": false,
             "pages": [
-              "api-reference/payee-cards/overview",
-              "api-reference/payee-cards/add",
-              "api-reference/payee-cards/get",
-              "api-reference/payee-cards/list",
-              "api-reference/payee-cards/delete"
+              "api-reference/payees/cards/overview",
+              "api-reference/payees/cards/add",
+              "api-reference/payees/cards/get",
+              "api-reference/payees/cards/list",
+              "api-reference/payees/cards/delete"
             ]
           },
           {
