@@ -33,15 +33,15 @@ Checks are delivered through the [Mail Check](/api-reference/payments/mail-check
 
 <CardGroup cols={3}>
 
-  <Card title="Add Check Address" icon="map-pin" href="/api-reference/check/add-address" arrow="true">
+  <Card title="Add Check Address" icon="map-pin" href="/api-reference/checks/add-address" arrow="true">
     Create a new mailing address used for sending physical checks.
   </Card>
 
-  <Card title="Update Check Address" icon="pencil" href="/api-reference/check/update-address" arrow="true">
+  <Card title="Update Check Address" icon="pencil" href="/api-reference/checks/update-address" arrow="true">
     Modify an existing check mailing address for the user.
   </Card>
 
-  <Card title="Update Check Config" icon="cog" href="/api-reference/check/update-config" arrow="true">
+  <Card title="Update Check Config" icon="cog" href="/api-reference/checks/update-config" arrow="true">
     Configure check branding, including logo and signature image.
   </Card>
 
@@ -67,11 +67,11 @@ These settings ensure every mailed check contains accurate address information a
 <Steps>
 
   <Step title="1. Add the user's check mailing address">
-    Call <code>[Add Check Address](/api-reference/check/add-address)</code> to store the recipient address used for mailing checks.
+    Call <code>[Add Check Address](/api-reference/checks/add-address)</code> to store the recipient address used for mailing checks.
   </Step>
 
   <Step title="2. (Optional) Configure check branding">
-    Use <code>[Update Check Config](/api-reference/check/update-config)</code> to include a logo or signature.  
+    Use <code>[Update Check Config](/api-reference/checks/update-config)</code> to include a logo or signature.  
     This step is optional—Paywint uses a default design if none is provided.
   </Step>
 

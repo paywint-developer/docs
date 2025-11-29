@@ -59,7 +59,7 @@
             ]
           },
           {
-            "group": "Accept payments",
+            "group": "Accept Payments",
             "expanded": false,
             "pages": [
               "api-reference/payments/checkout/overview",
@@ -115,10 +115,10 @@
             "group": "Check",
             "expanded": false,
             "pages": [
-              "api-reference/check/overview",
-              "api-reference/check/add-address",
-              "api-reference/check/update-address",
-              "api-reference/check/update-config"
+              "api-reference/checks/overview",
+              "api-reference/checks/add-address",
+              "api-reference/checks/update-address",
+              "api-reference/checks/update-config"
             ]
           },
           {
@@ -159,11 +159,11 @@
             "group": "Payee Addresses",
             "expanded": false,
             "pages": [
-              "api-reference/payee-address/overview",
-              "api-reference/payee-address/add",
-              "api-reference/payee-address/list",
-              "api-reference/payee-address/update",
-              "api-reference/payee-address/delete"
+              "api-reference/payees/addresses/overview",
+              "api-reference/payees/addresses/add",
+              "api-reference/payees/addresses/list",
+              "api-reference/payees/addresses/update",
+              "api-reference/payees/addresses/delete"
             ]
           }
         ]
