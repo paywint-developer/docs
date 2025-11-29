@@ -46,24 +46,25 @@ View user details, verification status, wallet balances, payment activity, and m
 
 ## APIs
 
+
 Use the User Management API to create, list, and retrieve users.  
 These endpoints are required for onboarding users into your platform and enabling any financial features.
 
-### **1. Create User**
-Register a new user under your platform.  
-This is required before linking bank accounts, adding cards, sending payments, or assigning payees.
+<CardGroup cols={3}>
 
-### **2. List Users**
-Retrieve all users registered under your Paywint platform account.  
-Useful for dashboards, internal tools, or syncing user data.
+  <Card title="Create User" icon="user-plus" href="/api-reference/users/create" arrow="true">
+    Register a new user under your platform. Required before enabling financial actions.
+  </Card>
 
-### **3. Get User**
-Fetch detailed user information including:
-- Profile details  
-- KYC/KYB verification status  
-- Wallet balances  
-- Linked funding methods  
-- Transaction-related metadata  
+  <Card title="List Users" icon="users" href="/api-reference/users/list" arrow="true">
+    Retrieve all users associated with your platform account.
+  </Card>
+
+  <Card title="Get User" icon="user-check" href="/api-reference/users/get" arrow="true">
+    Fetch complete user details including profile, compliance status, and linked methods.
+  </Card>
+
+</CardGroup>
 
 ---
 
