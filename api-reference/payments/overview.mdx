@@ -58,61 +58,67 @@ Once this setup is complete, payments can be created using the
 
 ---
 
+
 ## Available Payment APIs
 
-### **Create Payment**
-Initiates a payment from one user to another user or payee.
+<CardGroup cols={2}>
 
-This API automatically:
-- Validates payer, payee, and payment method  
-- Calculates applicable processing and delivery fees  
-- Executes the correct payment flow (wallet, card, ACH, Paywint Bank)  
-- Sends payment lifecycle notifications  
-- Returns the complete payment object  
+  <Card
+    title="Create Payment"
+    icon="dollar"
+    href="/api-reference/payments/create"
+    arrow="true"
+  >
+    Initiate a payment from a user to another user or payee.  
+    Handles validation, fees, settlement flow, and lifecycle events.
+  </Card>
 
- **[Create Payment](/api-reference/payments/create)**
+  <Card
+    title="Mail Check"
+    icon="money-check"
+    href="/api-reference/payments/mail-check"
+    arrow="true"
+  >
+    Create and mail a physical check to a payee’s address, with fee calculation and attachment support.
+  </Card>
 
----
+  <Card
+    title="Get Payment"
+    icon="receipt"
+    href="/api-reference/payments/get"
+    arrow="true"
+  >
+    Retrieve full details of a payment including status, timestamps, fees, and method.
+  </Card>
 
-### **Mail Check**
-Creates and mails a physical check to a payee’s address.  
-Includes:
+  <Card
+    title="List Payments"
+    icon="list"
+    href="/api-reference/payments/list"
+    arrow="true"
+  >
+    List all payments across your platform with filtering and pagination.
+  </Card>
 
-- Attachment validation  
-- Fee calculation based on mail type  
-- Wallet deduction  
-- Check generation and mailing  
+  <Card
+    title="List User Payments"
+    icon="list"
+    href="/api-reference/payments/list-sent"
+    arrow="true"
+  >
+    Retrieve all payments initiated by a specific user.
+  </Card>
 
- **[Mail Check](/api-reference/payments/mail-check)**
+  <Card
+    title="List Received Payments"
+    icon="list"
+    href="/api-reference/payments/list-received"
+    arrow="true"
+  >
+    Retrieve all payments received by a specific user.
+  </Card>
 
----
-
-### **Get Payment**
-Fetch complete details for a specific payment using its ID.  
-Includes amounts, fees, payment method, status, timestamps, and destination information.
-
- **[Get Payment](/api-reference/payments/get)**
-
----
-
-### **List Payments**
-Retrieve all payments, with filtering and pagination.
-
- **[List Payments](/api-reference/payments/list)**
-
----
-
-### **List User Payments**
-Retrieve all payments initiated by a specific user.
-
- **[List User Payments](/api-reference/payments/list-sent)**
-
----
-
-### **List User Received Payments**
-Retrieve all payments received by a specific user.
-
- **[List Received Payments](/api-reference/payments/list-user-received-payments)**
+</CardGroup>
 
 ---
 
