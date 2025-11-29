@@ -188,6 +188,24 @@
           "resources/changelog",
           "resources/glossary"
         ]
+      },
+      {
+        "tab": "Guidelines",
+        "icon": "list-check",
+        "groups": [
+          {
+            "group": "URL Standards",
+            "pages": [
+              "guidelines/url-standards/overview",
+              "guidelines/url-standards/basic-requirements",
+              "guidelines/url-standards/security-rules",
+              "guidelines/url-standards/file-rules",
+              "guidelines/url-standards/cloud-storage",
+              "guidelines/url-standards/troubleshooting",
+              "guidelines/url-standards/examples"
+            ]
+          }
+        ]
       }
     ]
   },
