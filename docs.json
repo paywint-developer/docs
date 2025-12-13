@@ -46,6 +46,16 @@
             ]
           },
           {
+            "group": "Wallet",
+            "expanded": false,
+            "pages": [
+              "api-reference/wallet/overview",
+              "api-reference/wallet/get",
+              "api-reference/wallet/fund",
+              "api-reference/wallet/withdraw"
+            ]
+          },
+          {
             "group": "Payments",
             "expanded": false,
             "pages": [
@@ -99,16 +109,6 @@
               "api-reference/cards/get",
               "api-reference/cards/list",
               "api-reference/cards/delete"
-            ]
-          },
-          {
-            "group": "Wallet",
-            "expanded": false,
-            "pages": [
-              "api-reference/wallet/overview",
-              "api-reference/wallet/get",
-              "api-reference/wallet/fund",
-              "api-reference/wallet/withdraw"
             ]
           },
           {
@@ -174,7 +174,6 @@
         "pages": [
           "webhooks/overview",
           "webhooks/setup",
-          "webhooks/signature-verification",
           "webhooks/events",
           "webhooks/event-types",
           "webhooks/retry-behavior"
@@ -182,7 +181,7 @@
       },
       {
         "tab": "Resources",
-        "icon": "book-open",
+        "icon": "bookmark",
         "pages": [
           "resources/faq",
           "resources/changelog",
