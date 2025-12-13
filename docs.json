@@ -180,15 +180,6 @@
         ]
       },
       {
-        "tab": "Resources",
-        "icon": "bookmark",
-        "pages": [
-          "resources/faq",
-          "resources/changelog",
-          "resources/glossary"
-        ]
-      },
-      {
         "tab": "Guidelines",
         "icon": "list-check",
         "groups": [
