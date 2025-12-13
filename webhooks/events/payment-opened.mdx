@@ -1,0 +1,49 @@
+---
+title: "payment.opened"
+description: "Sent when a payment attempt fails due to insufficient funds or gateway errors."
+icon: "x-circle"
+---
+
+The `payment.opened` event occurs when a payment attempt fails — this can happen due to insufficient funds, declined cards, or network errors.
+
+---
+
+## Example Payload
+
+```json
+{
+  "event": "payment.opened",
+  "id": "60a71435-d079-4126-81a2-1977bb70a306",
+  "data": {
+    "payment_id": "a5299046-1f62-4f78-8239-6e724d99c38b",
+    "status": "opened",
+    "amount": 599
+  },
+  "eventGeneratedTime": 1756717250.451172
+}
+```
+
+---
+
+## Event Fields
+
+<ResponseField name="failed_reason" type="string">
+  Description of the reason for failure.
+</ResponseField>
+
+---
+
+## Handling the Event
+
+Use this event to:
+
+* Notify users that their payment failed.
+* Log failure reasons for debugging or analytics.
+* Optionally provide a retry option in your UI.
+
+
+## Related Events
+
+* [payment.failed](/webhooks/events/payment-failed) – Payment attempt failed
+* [payment.retried](/webhooks/events/payment-retried) – Payment retried after failure
+* [payment.rejected](/webhooks/events/payment-rejected) – Payment rejected
