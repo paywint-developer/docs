@@ -244,7 +244,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://test.pw.wintpay.com/openapi.json",
+      "source": "https://berlin-shortly-cube-nick.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
