@@ -244,7 +244,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.pw.wintpay.com/openapi.json",
+      "source": "https://cliff-among-pounds-controlling.trycloudflare.com/openapi.json",
       "directory": "api-reference"
     }
   },
