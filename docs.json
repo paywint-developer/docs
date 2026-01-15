@@ -256,7 +256,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://components-computational-paxil-forum.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
