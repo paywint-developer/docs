@@ -17,12 +17,10 @@ Every URL must satisfy **all** of the following:
 ### **1. HTTPS Only**
 URLs must use secure HTTPS protocol.
 
-```
 
-[https://example.com/file.pdf](https://example.com/file.pdf)   ✔ Allowed
+[https://example.com/file.pdf](https://example.com/file.pdf)   ✔ Allowed   
 [http://example.com/file.pdf](http://example.com/file.pdf)    ✖ Rejected
 
-```
 
 ---
 
@@ -38,12 +36,10 @@ The document must be accessible **without authentication**, cookies, or login sc
 ### **3. Direct File Link**
 The URL must point directly to the actual **file**, not a webpage or preview viewer.
 
-```
 
-[https://storage.com/docs/id-proof.png](https://storage.com/docs/id-proof.png)       ✔ Direct file
+[https://storage.com/docs/id-proof.png](https://storage.com/docs/id-proof.png)       ✔ Direct file   
 [https://drive.google.com/file/d/123/view](https://drive.google.com/file/d/123/view)    ✖ Preview page
 
-```
 
 ---
 
@@ -69,21 +65,16 @@ Paywint downloads the file once during validation, so the URL must not:
 
 ## Valid Example
 
-```
-
 [https://secure-docs.example.com/business-license.pdf](https://secure-docs.example.com/business-license.pdf)
 
-```
 
 ## Invalid Examples
 
-```
 
-[http://example.com/file.pdf](http://example.com/file.pdf)                 (not HTTPS)
-[https://example.com/view?file=doc.pdf](https://example.com/view?file=doc.pdf)       (not a direct link)
-[https://private-server.local/doc.png](https://private-server.local/doc.png)        (private/internal network)
+[http://example.com/file.pdf](http://example.com/file.pdf)                 (not HTTPS)  
+[https://example.com/view?file=doc.pdf](https://example.com/view?file=doc.pdf)       (not a direct link)  
+[https://private-server.local/doc.png](https://private-server.local/doc.png)        (private/internal network)  
 
-```
 
 ---
 
