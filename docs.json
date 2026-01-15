@@ -117,8 +117,9 @@
             "pages": [
               "api-reference/checks/overview",
               "api-reference/checks/add-address",
-              "api-reference/checks/update-address",
-              "api-reference/checks/update-config"
+              "api-reference/checks/config-settings",
+              "api-reference/checks/retrieve-address-settings",
+              "api-reference/checks/update-address"
             ]
           },
           {
