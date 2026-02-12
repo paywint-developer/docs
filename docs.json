@@ -205,6 +205,44 @@
         "pages": [
           "resources/changelog"
         ]
+      },
+      {
+        "tab": "Developer API Reference",
+        "icon": "square-terminal",
+        "groups": [
+          {
+            "group": "Paywint Cards",
+            "expanded": false,
+            "pages": [
+              "api-reference/developer/paywint-cards/issue-gift-card",
+              "api-reference/developer/paywint-cards/list-gift-cards",
+              "api-reference/developer/paywint-cards/get-gift-card"
+            ]
+          },
+          {
+            "group": "Payee Management",
+            "expanded": false,
+            "pages": [
+              "api-reference/developer/payees/create",
+              "api-reference/developer/payees/list",
+              "api-reference/developer/payees/get",
+              "api-reference/developer/payees/update",
+              "api-reference/developer/payees/delete"
+            ]
+          },
+          {
+            "group": "Payee Addresses",
+            "expanded": false,
+            "pages": [
+              "api-reference/developer/payees/create-address",
+              "api-reference/developer/payees/list-address",
+              "api-reference/developer/payees/get-address",
+              "api-reference/developer/payees/update-address",
+              "api-reference/developer/payees/set-default-address",
+              "api-reference/developer/payees/delete-address"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -257,7 +295,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://api.sandbox.paywint.com/openapi.json",
+      "source": "https://test.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
