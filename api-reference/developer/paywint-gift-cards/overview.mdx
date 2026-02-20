@@ -32,7 +32,7 @@ You can:
 <Steps>
 
   <Step title="1. Request a new card">
-    Call <code>[Issue Gift Card For Payee](/api-reference/developer/paywint-cards/issue-gift-card)</code> with the payee identity, amount, currency, and any metadata that ties the card back to your system.
+    Call <code>[Issue Gift Card For Payee](/api-reference/developer/paywint-gift-cards/issue-card)</code> with the payee identity, amount, currency, and any metadata that ties the card back to your system.
   </Step>
 
   <Step title="2. Deliver card details">
@@ -40,11 +40,11 @@ You can:
   </Step>
 
   <Step title="3. Track card status">
-    Use <code>[List Gift Cards](/api-reference/developer/paywint-cards/list-gift-cards)</code> to see every card for the user, or call <code>[Get Gift Card](/api-reference/developer/paywint-cards/get-gift-card)</code> when you need the latest metadata for a specific issuance.
+    Use <code>[List Gift Cards](/api-reference/developer/paywint-gift-cards/list-cards)</code> to see every card for the user, or call <code>[Get Gift Card](/api-reference/developer/paywint-gift-cards/get-card)</code> when you need the latest metadata for a specific issuance.
   </Step>
 
   <Step title="4. Reload when needed">
-    If the card needs more value, call <code>[Reload Paywint Gift Card](/api-reference/developer/paywint-cards/reload-paywint-gift-card)</code> to top it up without issuing a new card.
+    If the card needs more value, call <code>[Reload Paywint Gift Card](/api-reference/developer/paywint-gift-cards/reload-card)</code> to top it up without issuing a new card.
   </Step>
 
 </Steps>
@@ -55,11 +55,11 @@ You can:
 
 <CardGroup cols={2}>
 
-  <Card title="Issue Gift Card" href="/api-reference/developer/paywint-cards/issue-gift-card" icon="plus" arrow="true">
+  <Card title="Issue Gift Card" href="/api-reference/developer/paywint-gift-cards/issue-card" icon="plus" arrow="true">
     Generate a gift card for a given payee and amount.
   </Card>
 
-  <Card title="Get Gift Card" href="/api-reference/developer/paywint-cards/get-gift-card" icon="credit-card" arrow="true">
+  <Card title="Get Gift Card" href="/api-reference/developer/paywint-gift-cards/get-card" icon="credit-card" arrow="true">
     Retrieve the issued card payload using the `request_id`.
   </Card>
 
@@ -67,11 +67,11 @@ You can:
 
 <CardGroup cols={2}>
 
-  <Card title="List Gift Cards" href="/api-reference/developer/paywint-cards/list-gift-cards" icon="list" arrow="true">
+  <Card title="List Gift Cards" href="/api-reference/developer/paywint-gift-cards/list-cards" icon="list" arrow="true">
     List every gift card associated with a user to monitor outstanding balances.
   </Card>
 
-  <Card title="Reload Gift Card" href="/api-reference/developer/paywint-cards/reload-paywint-gift-card" icon="refresh" arrow="true">
+  <Card title="Reload Gift Card" href="/api-reference/developer/paywint-gift-cards/reload-card" icon="refresh" arrow="true">
     Add value to an existing Paywint gift card when the balance needs replenishing.
   </Card>
 
