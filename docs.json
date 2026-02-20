@@ -213,6 +213,7 @@
           {
             "group": "Payment",
             "pages": [
+              "api-reference/developer/payment/overview",
               "api-reference/developer/payment/create-payment",
               "api-reference/developer/payment/get-payment",
               "api-reference/developer/payment/list-sent-payments",
