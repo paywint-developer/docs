@@ -252,6 +252,7 @@
             "group": "Payee Addresses",
             "expanded": false,
             "pages": [
+              "api-reference/developer/payees/address/overview",
               "api-reference/developer/payees/address/create-address",
               "api-reference/developer/payees/address/list-address",
               "api-reference/developer/payees/address/get-address",
