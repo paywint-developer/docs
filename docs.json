@@ -252,12 +252,12 @@
             "group": "Payee Addresses",
             "expanded": false,
             "pages": [
-              "api-reference/developer/address/create-payee-address",
-              "api-reference/developer/address/list-payee-address",
-              "api-reference/developer/address/get-payee-address",
-              "api-reference/developer/address/update-payee-address",
-              "api-reference/developer/address/set-default-payee-address",
-              "api-reference/developer/address/delete-payee-address"
+              "api-reference/developer/payees/address/create-address",
+              "api-reference/developer/payees/address/list-address",
+              "api-reference/developer/payees/address/get-address",
+              "api-reference/developer/payees/address/update-address",
+              "api-reference/developer/payees/address/set-default-address",
+              "api-reference/developer/payees/address/delete-address"
             ]
           }
         ]
