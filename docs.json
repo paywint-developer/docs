@@ -316,7 +316,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://divine-ben-henry-units.trycloudflare.com/openapi.json",
+      "source": "https://api.sandbox.paywint.com/openapi.json",
       "directory": "api-reference"
     }
   },
