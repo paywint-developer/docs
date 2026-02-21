@@ -228,14 +228,14 @@
             ]
           },
           {
-            "group": "Paywint Gift Cards",
+            "group": "Paywint Cards",
             "expanded": false,
             "pages": [
-              "api-reference/developer/paywint-gift-cards/overview",
-              "api-reference/developer/paywint-gift-cards/issue-card",
-              "api-reference/developer/paywint-gift-cards/reload-card",
-              "api-reference/developer/paywint-gift-cards/list-cards",
-              "api-reference/developer/paywint-gift-cards/get-card"
+              "api-reference/developer/paywint-cards/overview",
+              "api-reference/developer/paywint-cards/issue-card",
+              "api-reference/developer/paywint-cards/reload-card",
+              "api-reference/developer/paywint-cards/list-cards",
+              "api-reference/developer/paywint-cards/get-card"
             ]
           },
           {
