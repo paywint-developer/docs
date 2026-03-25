@@ -21,7 +21,7 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Developer API Reference",
         "icon": "square-terminal",
         "groups": [
           {
@@ -207,7 +207,7 @@
         ]
       },
       {
-        "tab": "Developer API Reference",
+        "tab": "Docs API Reference",
         "icon": "square-terminal",
         "groups": [
           {
@@ -316,7 +316,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://colorado-sampling-color-preceding.trycloudflare.com/openapi.json",
+      "source": "https://test.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
