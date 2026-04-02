@@ -290,6 +290,10 @@
       {
         "label": "Support",
         "href": "mailto:support@paywint.com"
+      },
+      {
+        "label": "Postman",
+        "href": "https://test.pw.wintpay.com/postman-collection"
       }
     ],
     "primary": {
