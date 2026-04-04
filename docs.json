@@ -320,7 +320,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://essence-leo-floating-sometimes.trycloudflare.com/openapi.json",
+      "source": "https://test.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
