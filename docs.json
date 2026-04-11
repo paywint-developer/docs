@@ -264,6 +264,18 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Test API Reference",
+        "icon": "square-terminal",
+        "groups": [
+          {
+            "group": "Payment",
+            "pages": [
+              "api-reference/test/ensure-cards/update-card-balance"
+            ]
+          }
+        ]
       }
     ]
   },
