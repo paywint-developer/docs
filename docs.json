@@ -68,14 +68,15 @@
               "api-reference/payments/list-received"
             ]
           },
-          {
-            "group": "Accept Payments",
-            "expanded": false,
-            "pages": [
-              "api-reference/payments/checkout/overview",
-              "api-reference/payments/checkout/create-payment-link"
-            ]
-          },
+		          {
+		            "group": "Accept Payments",
+		            "expanded": false,
+		            "pages": [
+		              "api-reference/payments/checkout/overview",
+		              "api-reference/payments/checkout/create-payment-link",
+		              "api-reference/payments/checkout/create-checkout-token"
+		            ]
+		          },
           {
             "group": "Bank Accounts",
             "expanded": false,
@@ -210,16 +211,17 @@
         "tab": "Docs API Reference",
         "icon": "square-terminal",
         "groups": [
-          {
-            "group": "Payment",
-            "pages": [
-              "api-reference/developer/payment/overview",
-              "api-reference/developer/payment/create-payment",
-              "api-reference/developer/payment/get-payment",
-              "api-reference/developer/payment/list-sent-payments",
-              "api-reference/developer/payment/list-received-payments"
-            ]
-          },
+	          {
+	            "group": "Payment",
+	            "pages": [
+	              "api-reference/developer/payment/overview",
+	              "api-reference/developer/payment/create-payment",
+	              "api-reference/developer/payment/create-checkout-token",
+	              "api-reference/developer/payment/get-payment",
+	              "api-reference/developer/payment/list-sent-payments",
+	              "api-reference/developer/payment/list-received-payments"
+	            ]
+	          },
           {
             "group": "Wallet",
             "pages": [
@@ -332,7 +334,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://shake-seminars-machines-historic.trycloudflare.com/openapi.json",
+      "source": "https://test.pw.wintpay.com/openapi.json",
       "directory": "api-reference"
     }
   },
