@@ -47,6 +47,10 @@ Each payment record includes:
     Retrieve a specific payment using its ID.
   </Card>
 
+  <Card title="Inline Checkout" icon="credit-card" href="/api-reference/developer/payment/create-developer-checkout-token" arrow="true">
+    Issue a checkout token to initiate a Paywint Inline Checkout session.
+  </Card>
+
 </CardGroup>
 
 <CardGroup cols={2}>
@@ -111,3 +115,45 @@ Use pagination to efficiently handle large transaction volumes.
 - Use `Get Payment` to confirm final transaction state.
 - Implement proper pagination handling for production environments.
 - Securely store API credentials and never expose them client-side.
+
+---
+
+## Inline Checkout
+
+Inline Checkout lets you embed a fully managed payment experience directly inside your application — without redirecting the customer to an external page.
+
+Your only backend responsibility is to **issue a checkout token**. Everything else — OTP verification, card setup, and payment execution — is handled by the Paywint Inline Checkout SDK on the client side.
+
+<Steps>
+
+  <Step title="Issue a checkout token (your backend)">
+    Call **Create Developer Checkout Token** from your server, passing the payer's email or phone number, the payment amount, and currency.
+
+    Paywint returns a short-lived `checkout_token` that encodes the payment context securely on the server side. Pass this token to your frontend.
+  </Step>
+
+  <Step title="Initialize the SDK (client side)">
+    Your frontend passes the `checkout_token` to the Paywint Inline Checkout SDK to start the session.
+
+    The SDK contacts Paywint to verify the token, identify the payer, and send them a one-time passcode (OTP) via email or SMS.
+  </Step>
+
+  <Step title="Payer verifies identity">
+    The payer enters the OTP in your UI. The SDK handles verification and receives a session access token internally — your frontend does not need to manage this.
+  </Step>
+
+  <Step title="Card setup (if paying by card)">
+    If the payer selects a card payment method, the SDK automatically handles any required card validation and image upload steps before proceeding to payment.
+  </Step>
+
+  <Step title="Payment is submitted">
+    The SDK submits the payment to Paywint. Once processed, it returns the payment result to your frontend — including the payment ID, status, amount, currency, and payment method.
+
+    Paywint also sends webhook notifications to your backend as the payment moves through its lifecycle.
+  </Step>
+
+</Steps>
+
+<Info>
+  The checkout token is valid for 15 minutes. Issue it as close to the moment the customer initiates checkout as possible.
+</Info>
