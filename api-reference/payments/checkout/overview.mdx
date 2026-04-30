@@ -108,60 +108,112 @@ Use a prebuilt checkout page to start accepting online payments.
 
 
 
-  <Tab title="Inline Elements (Coming Soon)">
-    Build a fully custom checkout experience using Paywint-managed UI components.   
-    It uses a new **Session API** and a **client-side SDK** that is currently under development.
+  <Tab title="Inline Checkout">
+    Build a fully custom checkout experience using Paywint-managed UI components.
+    Your backend issues a short-lived checkout token, the frontend SDK handles OTP verification,
+    card validation, and payment — all within your own UI.
 
     <Frame>
-      <img src="/assets/checkout/embedded-components.png" alt="Embedded components" />
+      <img src="/assets/checkout/embedded-components.png" alt="Inline Checkout" />
     </Frame>
 
+    <Info>
+      Inline Checkout supports two initiator types — **Platform** and **Developer**.
+      Choose the token endpoint that matches how your backend is authenticated.
+
+      | Initiator | Token endpoint | Who controls the payer? |
+      |---|---|---|
+      | Platform | `POST /api/checkout/token/platform` | You pass `user_id` directly |
+      | Developer | `POST /api/checkout/token/developer` | You pass `email` or `phone` — Paywint resolves or creates the payer |
+    </Info>
+
     <Steps>
-      <Step title="Create a Checkout Session">
-        Your backend calls the (upcoming) **Checkout Session API**, passing the payer details,  
-        amount, and any optional metadata.  
-        Paywint returns a short-lived <code>session_token</code>.
+      <Step title="Issue a checkout token (your backend)">
+        Your backend calls the appropriate token endpoint, passing the payer identity,
+        payment amount, currency, and scope.
+
+        Paywint returns a short-lived `checkout_token` (valid for 15 minutes) that
+        encodes the canonical amount, currency, initiator, and payer context server-side.
+
+        - Platform initiator → [Generate Checkout Token (Platform)](/api-reference/payments/checkout/create-checkout-token)
+        - Developer initiator → [Generate Checkout Token (Developer)](/api-reference/payments/checkout/create-developer-checkout-token)
       </Step>
 
-      <Step title="Initialize the Inline Elements SDK">
-        On your front-end, load the Paywint Checkout SDK and pass the <code>session_token</code>,  
-        enabled payment methods (wallet, card), amount, and user details.  
-        The SDK returns Payment Elements, which you can place anywhere inside your UI.
+      <Step title="Initialize the SDK (frontend)">
+        Pass the `checkout_token` to the Paywint Inline Checkout SDK along with the
+        payment amount and currency for tamper-checking.
+
+        The SDK calls `POST /api/checkout/auth/sdk` on your behalf. Paywint verifies
+        the token, validates the payer, and sends a one-time passcode (OTP) to the
+        payer via email or SMS (valid for 15 minutes).
+
+        The SDK returns:
+        - Whether the OTP was sent and via which channel
+        - OTP expiry timestamp
+        - Eligibility flags for available payment methods
       </Step>
 
-      <Step title="Render the Elements">
-        Add the generated UI components (for example, card input, wallet,  
-        and confirmation button) into your page.  
-        These components are fully customizable and adapt to your layout.
+      <Step title="Payer verifies OTP">
+        The payer enters the OTP in your UI. The SDK submits it to
+        `POST /api/checkout/auth/otp/verify`.
+
+        On success, Paywint issues a short-lived `access_token` scoped to this
+        checkout session. The SDK holds this token internally — your frontend
+        does not need to handle it directly.
       </Step>
 
-      <Step title="SDK verifies the session">
-        When initialized, the SDK calls Paywint’s backend with the provided session token.  
-        Paywint verifies the session, validates the payer, and sends an OTP to the user  
-        (valid for 15 minutes) to authorize the payment.
+      <Step title="Card setup (card payments only)">
+        If the payer is paying by card, the SDK performs the following before
+        submitting the payment:
+
+        <Steps>
+          <Step title="Fetch NMI provider config">
+            The SDK calls `GET /api/checkout/card/get-nmi-card-provider` to retrieve
+            the gateway public key, vault token, and AVS/3DS status flags for the card.
+          </Step>
+
+          <Step title="Validate the card (if required)">
+            If the card has not been validated on this device, or AVS/3DS requirements
+            are unmet, the SDK calls `POST /api/checkout/card/validate-nmi-card` to
+            run a zero-amount validation and record the 3DS/AVS result.
+          </Step>
+
+          <Step title="Upload card images (if required)">
+            If AVS validation requires manual card image review, the SDK calls
+            `POST /api/checkout/card/add-card-image/{card_id}` to upload front and
+            back images of the physical card.
+          </Step>
+        </Steps>
       </Step>
 
-      <Step title="Customer enters OTP and completes payment">
-        The user enters the OTP and provides required payment details in the Elements UI.  
-        The SDK sends this information to Paywint’s backend to complete the payment.
+      <Step title="Submit the payment">
+        The SDK calls `POST /api/checkout/payment/create` with the payment method,
+        amount, currency, and (for card payments) the `card_id` and `gateway_id`.
+
+        The `Idempotency-Key` header is required — the SDK generates this automatically.
+        Reusing the same key for a different payment is rejected.
+
+        Paywint returns a `CheckoutPaymentRead` response with:
+
+        | Field | Description |
+        |---|---|
+        | `id` | Payment UUID |
+        | `integer_id` | Sequential integer reference |
+        | `status` | `pending`, `completed`, or `failed` |
+        | `amount` | Charged amount |
+        | `currency` | ISO 4217 currency code |
+        | `payment_method` | `wallet` or `card` |
+        | `payer_id` | Payer UUID *(platform-initiated only)* |
+        | `payee_id` | Payee UUID *(platform-initiated only)* |
+        | `created_at` | Payment creation timestamp (UTC) |
       </Step>
 
-      <Step title="Receive the payment outcome">
-        After processing the payment, Paywint:
-        - Responds to the SDK with the payment result  
-        - Sends webhook notifications to your backend  
-        - Updates the payment’s lifecycle status  
-        
-        Your front-end can display a success, failure, or expired OTP message based on  
-        the result returned by the SDK.
+      <Step title="Receive lifecycle webhooks (your backend)">
+        As the payment moves through states, Paywint sends webhook notifications
+        to your server. See the [Webhooks](/webhooks/overview) documentation for
+        all available event types and payload shapes.
       </Step>
     </Steps>
-
-    <Note>
-      Inline Elements is currently in development.  
-      The full API reference, SDK functions, and sample integrations will be added  
-      as the feature becomes available.
-    </Note>
   </Tab>
 
 </Tabs>
