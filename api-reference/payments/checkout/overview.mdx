@@ -117,97 +117,34 @@ Use a prebuilt checkout page to start accepting online payments.
       <img src="/assets/checkout/embedded-components.png" alt="Inline Checkout" />
     </Frame>
 
-    <Info>
-      Inline Checkout supports two initiator types — **Platform** and **Developer**.
-      Choose the token endpoint that matches how your backend is authenticated.
-
-      | Initiator | Token endpoint | Who controls the payer? |
-      |---|---|---|
-      | Platform | `POST /api/checkout/token/platform` | You pass `user_id` directly |
-      | Developer | `POST /api/checkout/token/developer` | You pass `email` or `phone` — Paywint resolves or creates the payer |
-    </Info>
-
     <Steps>
       <Step title="Issue a checkout token (your backend)">
         Your backend calls the appropriate token endpoint, passing the payer identity,
         payment amount, currency, and scope.
 
-        Paywint returns a short-lived `checkout_token` (valid for 15 minutes) that
-        encodes the canonical amount, currency, initiator, and payer context server-side.
+        Paywint returns a short-lived `checkout_token` (valid for 30 minutes).
 
-        - Platform initiator → [Generate Checkout Token (Platform)](/api-reference/payments/checkout/create-checkout-token)
-        - Developer initiator → [Generate Checkout Token (Developer)](/api-reference/payments/checkout/create-developer-checkout-token)
+        - [Generate Checkout Token Here](/api-reference/payments/checkout/create-checkout-token)
       </Step>
 
       <Step title="Initialize the SDK (frontend)">
         Pass the `checkout_token` to the Paywint Inline Checkout SDK along with the
-        payment amount and currency for tamper-checking.
-
-        The SDK calls `POST /api/checkout/auth/sdk` on your behalf. Paywint verifies
-        the token, validates the payer, and sends a one-time passcode (OTP) to the
-        payer via email or SMS (valid for 15 minutes).
-
-        The SDK returns:
-        - Whether the OTP was sent and via which channel
-        - OTP expiry timestamp
-        - Eligibility flags for available payment methods
+        payment amount and currency.
+```js
+const pwCheckoutConfig = {
+  token: "CHECKOUT_TOKEN_FROM_YOUR_BACKEND",
+  payOptions: ["card", "wallet"],
+  amount: 120,
+  currency: "USD",
+  invoice_number: "INV-1001",
+  description: "Order #1001"
+}
+pwCheckout.init("#checkout-root", pwCheckoutConfig, (event) => {
+  console.log(event.event, event.message, event.data);
+});
+```
+        - [View Complete Implementation Here](/api-reference/payments/checkout/inline-checkout-sdk)
       </Step>
-
-      <Step title="Payer verifies OTP">
-        The payer enters the OTP in your UI. The SDK submits it to
-        `POST /api/checkout/auth/otp/verify`.
-
-        On success, Paywint issues a short-lived `access_token` scoped to this
-        checkout session. The SDK holds this token internally — your frontend
-        does not need to handle it directly.
-      </Step>
-
-      <Step title="Card setup (card payments only)">
-        If the payer is paying by card, the SDK performs the following before
-        submitting the payment:
-
-        <Steps>
-          <Step title="Fetch NMI provider config">
-            The SDK calls `GET /api/checkout/card/get-nmi-card-provider` to retrieve
-            the gateway public key, vault token, and AVS/3DS status flags for the card.
-          </Step>
-
-          <Step title="Validate the card (if required)">
-            If the card has not been validated on this device, or AVS/3DS requirements
-            are unmet, the SDK calls `POST /api/checkout/card/validate-nmi-card` to
-            run a zero-amount validation and record the 3DS/AVS result.
-          </Step>
-
-          <Step title="Upload card images (if required)">
-            If AVS validation requires manual card image review, the SDK calls
-            `POST /api/checkout/card/add-card-image/{card_id}` to upload front and
-            back images of the physical card.
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Submit the payment">
-        The SDK calls `POST /api/checkout/payment/create` with the payment method,
-        amount, currency, and (for card payments) the `card_id` and `gateway_id`.
-
-        The `Idempotency-Key` header is required — the SDK generates this automatically.
-        Reusing the same key for a different payment is rejected.
-
-        Paywint returns a `CheckoutPaymentRead` response with:
-
-        | Field | Description |
-        |---|---|
-        | `id` | Payment UUID |
-        | `integer_id` | Sequential integer reference |
-        | `status` | `pending`, `completed`, or `failed` |
-        | `amount` | Charged amount |
-        | `currency` | ISO 4217 currency code |
-        | `payment_method` | `wallet` or `card` |
-        | `payer_id` | Payer UUID *(platform-initiated only)* |
-        | `payee_id` | Payee UUID *(platform-initiated only)* |
-        | `created_at` | Payment creation timestamp (UTC) |
-      </Step>
-
       <Step title="Receive lifecycle webhooks (your backend)">
         As the payment moves through states, Paywint sends webhook notifications
         to your server. See the [Webhooks](/webhooks/overview) documentation for
