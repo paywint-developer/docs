@@ -73,7 +73,8 @@
             "expanded": false,
             "pages": [
               "api-reference/payments/checkout/overview",
-              "api-reference/payments/checkout/create-payment-link"
+              "api-reference/payments/checkout/create-payment-link",
+              "api-reference/payments/checkout/create-checkout-token"
             ]
           },
           {
