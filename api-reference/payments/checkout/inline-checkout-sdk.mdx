@@ -4,77 +4,78 @@ description: "Embed Paywint Inline Checkout directly in your application."
 icon: "credit-card"
 ---
 
-The Paywint Inline Checkout SDK renders a managed checkout component inside your page. Your backend creates a short-lived checkout token, then your frontend passes that token to the SDK with the payment configuration.
-
-Use this SDK when you want the payer to complete OTP verification, wallet payment, card payment, 3DS, and any required card image upload without leaving your application.
+The Paywint Inline Checkout SDK renders a managed checkout component inside your page. Your backend creates a short-lived [checkout token](/api-reference/payments/checkout/create-checkout-token), then your frontend passes that token to the SDK with the payment configuration.
 
 ## Load the SDK
 
-Add a mount element, register the SDK ready callback, then load `checkout.js` from the Paywint SDK host for your environment.
+Load the Paywint Checkout SDK and initialize the checkout mount point.
 
 ```html
-<div id="checkout-root"></div>
-<button id="host-submit-button" type="button">Submit From Host</button>
+<head>
+  <script>window.$paywint=window.$paywint||{};$paywint.checkout=$paywint.checkout||{ready:function(){}};</script>
+  <script src="https://YOUR_PAYWINT_SDK_HOST/checkout.js" defer></script>
+</head>
+<body>
 
-<script>
-  window.$paywint = window.$paywint || {};
-  $paywint.checkout = $paywint.checkout || { ready: function () {} };
-</script>
+  <!-- Element to mount the checkout SDK -->
+  <div id="checkout-root"></div>
+  
+  <!-- Optional custom submit button -->
+  <button id="host-submit-button" type="button">Submit From Host</button>
 
-<script>
-  $paywint.checkout.ready = () => {
-    const pwCheckout = new window.PaywintCheckout();
+  <script>
+    $paywint.checkout.ready = () => {
+      const pwCheckout = new PaywintCheckout();
 
-    const pwCheckoutConfig = {
-      token: "CHECKOUT_TOKEN_FROM_YOUR_BACKEND",
-      payOptions: ["card", "wallet"],
-      amount: 120,
-      currency: "USD",
-      invoice_number: "INV-1001",
-      description: "Order #1001",
-      hide_submit_button: false,
-      style: {
-        "pw-border-color": "#d9e6f4",
-        "pw-active-border-color": "#025865",
-        "pw-background-color": "#ffffff",
-        "pw-text-color": "#1e293b",
-        "pw-input-border-color": "1px solid #cbd5e1",
-        "pw-input-radius": "8px",
-        "pw-input-height": "40px",
-        "pw-submit-button-background-color": "#000000",
-        "pw-submit-button-text-color": "#ffffff",
-        "pw-checkout-font": "Inter, sans-serif"
-      }
-    };
+      const pwCheckoutConfig = {
+        token: "CHECKOUT_TOKEN_FROM_YOUR_BACKEND",
+        payOptions: ["card", "wallet"],
+        amount: 120,
+        currency: "USD",
+        invoice_number: "INV-1001",
+        description: "Order #1001",
+        hide_submit_button: false,
+        style: {
+          "pw-border-color": "#d9e6f4",
+          "pw-active-border-color": "#025865",
+          "pw-background-color": "#ffffff",
+          "pw-text-color": "#1e293b",
+          "pw-input-border-color": "1px solid #cbd5e1",
+          "pw-input-radius": "8px",
+          "pw-input-height": "40px",
+          "pw-submit-button-background-color": "#000000",
+          "pw-submit-button-text-color": "#ffffff",
+          "pw-checkout-font": "Inter, sans-serif"
+        }
+      };
 
-    const payerAddressData = {
-      payer_first_name: "Jane",
-      payer_last_name: "Doe",
-      payer_address_line_1: "123 Main Street",
-      payer_city: "New York",
-      payer_state: "NY",
-      payer_zip: "10001",
-      payer_country: "US"
-    };
+      const payerAddressData = {
+        payer_first_name: "Jane",
+        payer_last_name: "Doe",
+        payer_address_line_1: "123 Main Street",
+        payer_city: "New York",
+        payer_state: "NY",
+        payer_zip: "10001",
+        payer_country: "US"
+      };
 
-    pwCheckout
-      .init("#checkout-root", pwCheckoutConfig, (event) => {
-        console.log("Paywint event:", event);
-      })
-      .then(() => {
-        pwCheckout.updatePayorAddress(payerAddressData);
+      pwCheckout
+        .init("#checkout-root", pwCheckoutConfig, (event) => {
+          console.log("Paywint event:", event);
+        })
+        .then(() => {
+          pwCheckout.updatePayorAddress(payerAddressData);
 
-        document.getElementById("host-submit-button")?.addEventListener("click", () => {
-          pwCheckout.triggerSubmit();
+          document.getElementById("host-submit-button")?.addEventListener("click", () => {
+            pwCheckout.triggerSubmit();
+          });
+        })
+        .catch((error) => {
+          document.getElementById("checkout-root").textContent = error?.message || "Failed to initialize checkout.";
         });
-      })
-      .catch((error) => {
-        document.getElementById("checkout-root").textContent = error?.message || "Failed to initialize checkout.";
-      });
-  };
-</script>
-
-<script src="https://YOUR_PAYWINT_SDK_HOST/checkout.js" defer></script>
+    };
+  </script>
+</body>
 ```
 
 <Info>
@@ -140,7 +141,7 @@ Common event payloads include an `event` name, a human-readable `message`, and o
 
 ## Styling
 
-The `style` config accepts either an object or a CSS declaration string. Object keys can be provided with or without the leading `--`.
+The `style` configuration accepts an object of CSS variable overrides. Keys may be provided with or without the leading `--`.
 
 ```js
 style: {
