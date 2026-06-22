@@ -97,8 +97,8 @@
             "pages": [
               "api-reference/paywint-bank-accounts/overview",
               "api-reference/paywint-bank-accounts/open",
-              "api-reference/paywint-bank-accounts/list-transactions",
-              "api-reference/paywint-bank-accounts/withdrawal"
+              "api-reference/paywint-bank-accounts/withdrawal",
+              "api-reference/paywint-bank-accounts/list-transactions"
             ]
           },
           {
