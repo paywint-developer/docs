@@ -1,0 +1,94 @@
+---
+title: "Overview"
+description: "Retrieve cross-border payout metadata, manage payee banking details, and create or track cross-border payouts."
+icon: "book-open"
+---
+
+The Cross Boarder Payments API helps you prepare and submit international payouts by exposing the reference data and payee setup required before funds are sent.
+
+You can use these endpoints to:
+
+- List supported payout countries, branches, payers, rates, states, cities, and bank account types
+- Review payer rules and other mandatory field requirements
+- Save payee addresses and banks for a user
+- Create a cross-border payout and retrieve its current status
+
+---
+
+## Available APIs
+
+<CardGroup cols={3}>
+
+  <Card title="List Cross-Border Payout Countries" icon="globe" href="/api-reference/cross-boarder-payments/list-payout-countries" arrow="true">
+    Retrieve the countries currently supported for cross-border payouts.
+  </Card>
+
+  <Card title="List Payout Bank Branches" icon="building" href="/api-reference/cross-boarder-payments/list-payout-bank-branches" arrow="true">
+    List available payout bank branches for supported destinations.
+  </Card>
+
+  <Card title="Get Exchange Rates" icon="dollar" href="/api-reference/cross-boarder-payments/get-exchange-rates" arrow="true">
+    View exchange rate information used during payout creation.
+  </Card>
+
+</CardGroup>
+
+<CardGroup cols={3}>
+
+  <Card title="List Payers" icon="users" href="/api-reference/cross-boarder-payments/list-payers" arrow="true">
+    Retrieve the available payers for cross-border payout flows.
+  </Card>
+
+  <Card title="Get Payer Rules (Mandatory Fields)" icon="list" href="/api-reference/cross-boarder-payments/get-payer-rules" arrow="true">
+    Inspect payer-specific required fields before creating a payout.
+  </Card>
+
+  <Card title="List States" icon="map" href="/api-reference/cross-boarder-payments/list-states" arrow="true">
+    Retrieve payout destination states for supported countries.
+  </Card>
+
+</CardGroup>
+
+<CardGroup cols={3}>
+
+  <Card title="List Cities" icon="map" href="/api-reference/cross-boarder-payments/list-cities" arrow="true">
+    Retrieve payout destination cities for a selected state or country.
+  </Card>
+
+  <Card title="List Bank Account Types" icon="landmark" href="/api-reference/cross-boarder-payments/list-bank-account-types" arrow="true">
+    List the bank account types accepted for cross-border payouts.
+  </Card>
+
+  <Card title="List Payee Banks" icon="list" href="/api-reference/cross-boarder-payments/list-payee-banks" arrow="true">
+    Retrieve saved payee bank accounts for a specific user.
+  </Card>
+
+</CardGroup>
+
+<CardGroup cols={3}>
+
+  <Card title="Get Cross-Border Payout Status" icon="receipt" href="/api-reference/cross-boarder-payments/get-cross-border-payout-status" arrow="true">
+    Retrieve the latest status for an existing cross-border payout.
+  </Card>
+
+  <Card title="Add a Payee Address" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-address" arrow="true">
+    Save a payee address for a user before bank setup or payout creation.
+  </Card>
+
+  <Card title="Add a Payee Bank" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-bank" arrow="true">
+    Save a payee bank account for cross-border payouts.
+  </Card>
+
+</CardGroup>
+
+<CardGroup cols={3}>
+
+  <Card title="Create a Cross-Border Payout" icon="dollar" href="/api-reference/cross-boarder-payments/create-cross-border-payout" arrow="true">
+    Create and submit a new cross-border payout.
+  </Card>
+
+  <Card title="Delete a Payee Bank" icon="trash" href="/api-reference/cross-boarder-payments/delete-payee-bank" arrow="true">
+    Remove a saved payee bank account for a user.
+  </Card>
+
+</CardGroup>

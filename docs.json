@@ -78,6 +78,27 @@
 		            ]
 		          },
           {
+            "group": "Cross Boarder Payments",
+            "expanded": false,
+            "pages": [
+              "api-reference/cross-boarder-payments/overview",
+              "api-reference/cross-boarder-payments/list-payout-countries",
+              "api-reference/cross-boarder-payments/list-payout-bank-branches",
+              "api-reference/cross-boarder-payments/get-exchange-rates",
+              "api-reference/cross-boarder-payments/list-payers",
+              "api-reference/cross-boarder-payments/get-payer-rules",
+              "api-reference/cross-boarder-payments/list-states",
+              "api-reference/cross-boarder-payments/list-cities",
+              "api-reference/cross-boarder-payments/list-bank-account-types",
+              "api-reference/cross-boarder-payments/list-payee-banks",
+              "api-reference/cross-boarder-payments/get-cross-border-payout-status",
+              "api-reference/cross-boarder-payments/add-payee-address",
+              "api-reference/cross-boarder-payments/add-payee-bank",
+              "api-reference/cross-boarder-payments/create-cross-border-payout",
+              "api-reference/cross-boarder-payments/delete-payee-bank"
+            ]
+          },
+          {
             "group": "Bank Accounts",
             "expanded": false,
             "pages": [
