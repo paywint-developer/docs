@@ -39,16 +39,32 @@ You can use these endpoints to:
     Inspect payer-specific required fields before creating a payout.
   </Card>
 
-</CardGroup>
-
-<CardGroup cols={3}>
+  <Card title="List Payee Addresses" icon="list" href="/api-reference/cross-boarder-payments/list-payee-addresses" arrow="true">
+    Retrieve saved payee addresses for a specific user.
+  </Card>
 
   <Card title="List Payee Banks" icon="list" href="/api-reference/cross-boarder-payments/list-payee-banks" arrow="true">
     Retrieve saved payee bank accounts for a specific user.
   </Card>
 
+</CardGroup>
+
+<CardGroup cols={3}>
+
   <Card title="Add a Payee Address" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-address" arrow="true">
     Save a payee address for a user before bank setup or payout creation.
+  </Card>
+
+</CardGroup>
+
+<CardGroup cols={3}>
+
+  <Card title="Get a Payee Address" icon="receipt" href="/api-reference/cross-boarder-payments/get-a-payee-address" arrow="true">
+    Retrieve a specific saved payee address by user and address ID.
+  </Card>
+
+  <Card title="Edit a Payee Address" icon="pencil" href="/api-reference/cross-boarder-payments/edit-a-payee-address" arrow="true">
+    Update a saved payee address for a specific user.
   </Card>
 
   <Card title="Add a Payee Bank" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-bank" arrow="true">
