@@ -1,63 +1,93 @@
 ---
 title: "Overview"
-description: "Retrieve cross-border payout metadata, manage payee banking details, and create or track cross-border payouts."
+description: "Retrieve cross-border payout reference data, manage payee banking details, and create or track international payouts."
 icon: "book-open"
 ---
 
-The Cross Boarder Payments API helps you prepare and submit international payouts by exposing the reference data and payee setup required before funds are sent.
+The **Cross-Border Payments API** lets you send international payouts on behalf of your users.
+Every endpoint is exposed under the `/api/platform/cross-border/` namespace and follows a
+predictable flow: look up reference data, set up the payee, create the payout, then track its status.
 
 You can use these endpoints to:
 
-- List supported payout countries, banks, and rates
-- Review payer rules and other mandatory field requirements
-- Save payee addresses and banks for a user
-- Create a cross-border payout and retrieve its current status
+- Look up supported payout **countries**, **banks**, and live **exchange rates**
+- Read **payer rules** so you collect the mandatory fields for each corridor
+- Save and manage a payee's **addresses** and **bank accounts**
+- **Create** a cross-border payout and **track** its status
 
 ---
 
-## Available APIs
+## How Cross-Border Payouts Work
 
-<CardGroup cols={3}>
+<Steps>
+  <Step title="Load reference data">
+    Fetch the supported [payout countries](/api-reference/cross-boarder-payments/list-payout-countries),
+    [payout banks](/api-reference/cross-boarder-payments/list-payout-banks), and current
+    [exchange rates](/api-reference/cross-boarder-payments/get-exchange-rates) for the destination.
+  </Step>
 
-  <Card title="List Cross-Border Payout Countries" icon="globe" href="/api-reference/cross-boarder-payments/list-payout-countries" arrow="true">
+  <Step title="Check payer rules">
+    Call [Get Payer Rules](/api-reference/cross-boarder-payments/get-payer-rules) to discover the
+    mandatory fields required for the selected corridor before you collect payee details.
+  </Step>
+
+  <Step title="Set up the payee">
+    Save the recipient's [address](/api-reference/cross-boarder-payments/add-payee-address) and
+    [bank account](/api-reference/cross-boarder-payments/add-payee-bank) for the user. These are
+    reusable across future payouts.
+  </Step>
+
+  <Step title="Create the payout">
+    Submit the transfer with
+    [Create a Cross-Border Payout](/api-reference/cross-boarder-payments/create-cross-border-payout).
+  </Step>
+
+  <Step title="Track the status">
+    Poll [Get Cross-Border Payout Status](/api-reference/cross-boarder-payments/get-cross-border-payout-status)
+    or listen for webhooks to follow the payout through to completion.
+  </Step>
+</Steps>
+
+<Info>
+  Payee addresses and banks are stored **per user** (`user_id`). Set them up once and reuse them for
+  every subsequent payout to that recipient.
+</Info>
+
+---
+
+## Reference Data & Rates
+
+<CardGroup cols={2}>
+
+  <Card title="List Payout Countries" icon="globe" href="/api-reference/cross-boarder-payments/list-payout-countries" arrow="true">
     Retrieve the countries currently supported for cross-border payouts.
   </Card>
 
-  <Card title="List Payout Banks" icon="building" href="/api-reference/cross-boarder-payments/list-payout-banks" arrow="true">
-    List available payout banks for supported destinations.
+  <Card title="List Payout Banks" icon="building-columns" href="/api-reference/cross-boarder-payments/list-payout-banks" arrow="true">
+    List the available payout banks for supported destinations.
   </Card>
 
-  <Card title="Get Exchange Rates" icon="dollar" href="/api-reference/cross-boarder-payments/get-exchange-rates" arrow="true">
-    View exchange rate information used during payout creation.
+  <Card title="Get Exchange Rates" icon="dollar-sign" href="/api-reference/cross-boarder-payments/get-exchange-rates" arrow="true">
+    View the exchange rate information used when creating a payout.
   </Card>
 
-</CardGroup>
-
-<CardGroup cols={3}>
-
-  <Card title="Get Payer Rules (Mandatory Fields)" icon="list" href="/api-reference/cross-boarder-payments/get-payer-rules" arrow="true">
-    Inspect payer-specific required fields before creating a payout.
-  </Card>
-
-  <Card title="List Payee Addresses" icon="list" href="/api-reference/cross-boarder-payments/list-payee-addresses" arrow="true">
-    Retrieve saved payee addresses for a specific user.
-  </Card>
-
-  <Card title="List Payee Banks" icon="list" href="/api-reference/cross-boarder-payments/list-payee-banks" arrow="true">
-    Retrieve saved payee bank accounts for a specific user.
+  <Card title="Get Payer Rules" icon="list-check" href="/api-reference/cross-boarder-payments/get-payer-rules" arrow="true">
+    Inspect the payer-specific mandatory fields required before creating a payout.
   </Card>
 
 </CardGroup>
 
-<CardGroup cols={3}>
+---
+
+## Payee Setup
+
+### Addresses
+
+<CardGroup cols={2}>
 
   <Card title="Add a Payee Address" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-address" arrow="true">
     Save a payee address for a user before bank setup or payout creation.
   </Card>
-
-</CardGroup>
-
-<CardGroup cols={3}>
 
   <Card title="Get a Payee Address" icon="receipt" href="/api-reference/cross-boarder-payments/get-a-payee-address" arrow="true">
     Retrieve a specific saved payee address by user and address ID.
@@ -67,20 +97,22 @@ You can use these endpoints to:
     Update a saved payee address for a specific user.
   </Card>
 
-  <Card title="Add a Payee Bank" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-bank" arrow="true">
-    Save a payee bank account for cross-border payouts.
+  <Card title="List Payee Addresses" icon="list" href="/api-reference/cross-boarder-payments/list-payee-addresses" arrow="true">
+    Retrieve all saved payee addresses for a specific user.
   </Card>
 
 </CardGroup>
 
-<CardGroup cols={3}>
+### Bank Accounts
 
-  <Card title="Create a Cross-Border Payout" icon="dollar" href="/api-reference/cross-boarder-payments/create-cross-border-payout" arrow="true">
-    Create and submit a new cross-border payout.
+<CardGroup cols={2}>
+
+  <Card title="Add a Payee Bank" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-bank" arrow="true">
+    Save a payee bank account for cross-border payouts.
   </Card>
 
-  <Card title="Get Cross-Border Payout Status" icon="receipt" href="/api-reference/cross-boarder-payments/get-cross-border-payout-status" arrow="true">
-    Retrieve the latest status for an existing cross-border payout.
+  <Card title="List Payee Banks" icon="list" href="/api-reference/cross-boarder-payments/list-payee-banks" arrow="true">
+    Retrieve all saved payee bank accounts for a specific user.
   </Card>
 
   <Card title="Delete a Payee Bank" icon="trash" href="/api-reference/cross-boarder-payments/delete-payee-bank" arrow="true">
@@ -88,3 +120,31 @@ You can use these endpoints to:
   </Card>
 
 </CardGroup>
+
+---
+
+## Payouts
+
+<CardGroup cols={2}>
+
+  <Card title="Create a Cross-Border Payout" icon="paper-plane" href="/api-reference/cross-boarder-payments/create-cross-border-payout" arrow="true">
+    Create and submit a new cross-border payout for a user's payee.
+  </Card>
+
+  <Card title="Get Cross-Border Payout Status" icon="magnifying-glass" href="/api-reference/cross-boarder-payments/get-cross-border-payout-status" arrow="true">
+    Retrieve the latest status for an existing cross-border payout.
+  </Card>
+
+</CardGroup>
+
+---
+
+## Best Practices
+
+- Always read **[Payer Rules](/api-reference/cross-boarder-payments/get-payer-rules)** for the target
+  corridor before collecting payee details — required fields vary by country and bank.
+- Fetch **[Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)** close to payout
+  time so quoted amounts reflect current rates.
+- Reuse saved payee **addresses** and **banks** instead of recreating them for every payout.
+- Track payouts with the **status** endpoint or webhooks rather than assuming success on creation.
+ 
