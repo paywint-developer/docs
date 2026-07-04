@@ -88,13 +88,14 @@
               "api-reference/cross-boarder-payments/get-payer-rules",
               "api-reference/cross-boarder-payments/list-payee-addresses",
               "api-reference/cross-boarder-payments/list-payee-banks",
-              "api-reference/cross-boarder-payments/get-cross-border-payout-status",
               "api-reference/cross-boarder-payments/add-payee-address",
               "api-reference/cross-boarder-payments/get-a-payee-address",
               "api-reference/cross-boarder-payments/edit-a-payee-address",
               "api-reference/cross-boarder-payments/add-payee-bank",
-              "api-reference/cross-boarder-payments/create-cross-border-payout",
-              "api-reference/cross-boarder-payments/delete-payee-bank"
+              "api-reference/cross-boarder-payments/delete-payee-bank",
+              "api-reference/cross-boarder-payments/create-a-cross-border-payment",
+              "api-reference/cross-boarder-payments/get-a-cross-border-payment",
+              "api-reference/cross-boarder-payments/list-cross-border-payments"
             ]
           },
           {
