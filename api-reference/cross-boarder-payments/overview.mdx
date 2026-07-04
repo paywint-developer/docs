@@ -6,14 +6,14 @@ icon: "book-open"
 
 The **Cross-Border Payments API** lets you send international payouts on behalf of your users.
 Every endpoint is exposed under the `/api/platform/cross-border/` namespace and follows a
-predictable flow: look up reference data, set up the payee, create the payment, then retrieve its details.
+predictable flow: look up reference data, set up the payee, then create the payment.
 
 You can use these endpoints to:
 
-- Look up supported payout **countries**, **banks**, and live **exchange rates**
+- Look up supported payout **banks** and live **exchange rates**
 - Read **payer rules** so you collect the mandatory fields for each corridor
 - Save and manage a payee's **addresses** and **bank accounts**
-- **Create** a cross-border payment and **retrieve** its details or history
+- **Create** a cross-border payment
 
 ---
 
@@ -21,8 +21,7 @@ You can use these endpoints to:
 
 <Steps>
   <Step title="Load reference data">
-    Fetch the supported [payout countries](/api-reference/cross-boarder-payments/list-payout-countries),
-    [payout banks](/api-reference/cross-boarder-payments/list-payout-banks), and current
+    Fetch the supported [payout banks](/api-reference/cross-boarder-payments/list-payout-banks), and current
     [exchange rates](/api-reference/cross-boarder-payments/get-exchange-rates) for the destination.
   </Step>
 
@@ -42,11 +41,6 @@ You can use these endpoints to:
     [Create a Cross-Border Payment](/api-reference/cross-boarder-payments/create-a-cross-border-payment).
   </Step>
 
-  <Step title="Retrieve the payment">
-    Use [Get a Cross-Border Payment](/api-reference/cross-boarder-payments/get-a-cross-border-payment)
-    for a specific payment or [List Cross-Border Payments](/api-reference/cross-boarder-payments/list-cross-border-payments)
-    to browse the full payment history.
-  </Step>
 </Steps>
 
 <Info>
@@ -59,10 +53,6 @@ You can use these endpoints to:
 ## Reference Data & Rates
 
 <CardGroup cols={2}>
-
-  <Card title="List Cross-Border Payout Countries" icon="globe" href="/api-reference/cross-boarder-payments/list-payout-countries" arrow="true">
-    Retrieve the countries currently supported for cross-border payouts.
-  </Card>
 
   <Card title="List Payout Banks" icon="building-columns" href="/api-reference/cross-boarder-payments/list-payout-banks" arrow="true">
     List the available payout banks for supported destinations.
@@ -132,14 +122,6 @@ You can use these endpoints to:
     Create and submit a new cross-border payment for a user's payee.
   </Card>
 
-  <Card title="Get a Cross-Border Payment" icon="magnifying-glass" href="/api-reference/cross-boarder-payments/get-a-cross-border-payment" arrow="true">
-    Retrieve the latest details for an existing cross-border payment.
-  </Card>
-
-  <Card title="List Cross-Border Payments" icon="list" href="/api-reference/cross-boarder-payments/list-cross-border-payments" arrow="true">
-    Retrieve the full cross-border payment history.
-  </Card>
-
 </CardGroup>
 
 ---
@@ -151,4 +133,4 @@ You can use these endpoints to:
 - Fetch **[Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)** close to payout
   time so quoted amounts reflect current rates.
 - Reuse saved payee **addresses** and **banks** instead of recreating them for every payout.
-- Retrieve payments with the **get** or **list** endpoints, or use webhooks rather than assuming success on creation.
+- Use webhooks or your own downstream reconciliation flow rather than assuming success on creation.
