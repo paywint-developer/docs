@@ -11,7 +11,7 @@ predictable flow: look up reference data, set up the payee, then create the paym
 You can use these endpoints to:
 
 - Look up supported payout **banks** and live **exchange rates**
-- Read **payer rules** so you collect the mandatory fields for each corridor
+- Read **payee rules** so you collect the mandatory fields for each corridor
 - Save and manage a payee's **addresses** and **bank accounts**
 - **Create** a cross-border payment
 
@@ -26,7 +26,7 @@ You can use these endpoints to:
   </Step>
 
   <Step title="Check payer rules">
-    Call [Get Payer Rules (Mandatory Fields)](/api-reference/cross-boarder-payments/get-payer-rules) to discover the
+    Call [Get Payee Rules (Mandatory Fields)](/api-reference/cross-boarder-payments/get-payee-rules) to discover the
     mandatory fields required for the selected corridor before you collect payee details.
   </Step>
 
@@ -62,8 +62,8 @@ You can use these endpoints to:
     View the exchange rate information used when creating a payout.
   </Card>
 
-  <Card title="Get Payer Rules (Mandatory Fields)" icon="list-check" href="/api-reference/cross-boarder-payments/get-payer-rules" arrow="true">
-    Inspect the payer-specific mandatory fields required before creating a payout.
+  <Card title="Get Payee Rules (Mandatory Fields)" icon="list-check" href="/api-reference/cross-boarder-payments/get-payee-rules" arrow="true">
+    Inspect the payee-specific mandatory fields required before creating a payout.
   </Card>
 
 </CardGroup>
@@ -128,7 +128,7 @@ You can use these endpoints to:
 
 ## Best Practices
 
-- Always read **[Payer Rules](/api-reference/cross-boarder-payments/get-payer-rules)** for the target
+- Always read **[Payee Rules](/api-reference/cross-boarder-payments/get-payee-rules)** for the target
   corridor before collecting payee details — required fields vary by country and bank.
 - Fetch **[Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)** close to payout
   time so quoted amounts reflect current rates.
