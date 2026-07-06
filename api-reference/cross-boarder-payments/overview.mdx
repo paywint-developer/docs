@@ -12,24 +12,24 @@ The flow is simple: check the rules, save the payee details, then create the pay
 ## How It Works
 
 <Steps>
-  <Step title="1. Check the rules">
+  <Step title="Check the rules">
     Start with [Get Payee Rules (Mandatory Fields)](/api-reference/cross-boarder-payments/get-payee-rules)
     so you know which fields are required for the payment.
   </Step>
 
-  <Step title="2. Review bank and rate data">
+  <Step title="Review bank and rate data">
     Use [List Payout Banks](/api-reference/cross-boarder-payments/list-payout-banks) and
     [Get Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)
     before you submit the payment.
   </Step>
 
-  <Step title="3. Save the payee details">
+  <Step title="Save the payee details">
     Add the recipient's [Payee Address](/api-reference/cross-boarder-payments/add-payee-address)
     and [Payee Bank](/api-reference/cross-boarder-payments/add-payee-bank).
     You can reuse them for future payments.
   </Step>
 
-  <Step title="4. Create the payment">
+  <Step title="Create the payment">
     Submit the transfer with
     [Create a Cross-Border Payment](/api-reference/cross-boarder-payments/create-a-cross-border-payment).
   </Step>
