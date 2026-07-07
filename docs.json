@@ -68,15 +68,15 @@
               "api-reference/payments/list-received"
             ]
           },
-		          {
-		            "group": "Accept Payments",
-		            "expanded": false,
-		            "pages": [
-		              "api-reference/payments/checkout/overview",
-		              "api-reference/payments/checkout/create-payment-link",
-		              "api-reference/payments/checkout/create-checkout-token"
-		            ]
-		          },
+          {
+            "group": "Accept Payments",
+            "expanded": false,
+            "pages": [
+              "api-reference/payments/checkout/overview",
+              "api-reference/payments/checkout/create-payment-link",
+              "api-reference/payments/checkout/create-checkout-token"
+            ]
+          },
           {
             "group": "Cross Border Payments",
             "expanded": false,
