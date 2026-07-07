@@ -1,0 +1,129 @@
+---
+title: "Overview"
+description: "Everything you need to send cross-border payments through the Paywint API."
+icon: "book-open"
+---
+
+The **Cross-Border Payments API** helps you send international payments for your users.
+The flow is simple: check the rules, save the payee details, then create the payment.
+
+---
+
+## How It Works
+
+<Steps>
+  <Step title="Check the rules">
+    Start with [Get Payee Rules (Mandatory Fields)](/api-reference/cross-boarder-payments/get-payee-rules)
+    so you know which fields are required for the payment.
+  </Step>
+
+  <Step title="Review bank and rate data">
+    Use [List Payout Banks](/api-reference/cross-boarder-payments/list-payout-banks) and
+    [Get Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)
+    before you submit the payment.
+  </Step>
+
+  <Step title="Save the payee details">
+    Add the recipient's [Payee Address](/api-reference/cross-boarder-payments/add-payee-address)
+    and [Payee Bank](/api-reference/cross-boarder-payments/add-payee-bank).
+    You can reuse them for future payments.
+  </Step>
+
+  <Step title="Create the payment">
+    Submit the transfer with
+    [Create a Cross-Border Payment](/api-reference/cross-boarder-payments/create-a-cross-border-payment).
+  </Step>
+
+</Steps>
+
+<Info>
+  Payee addresses and banks are stored **per user** (`user_id`). Set them up once and reuse them for
+  every subsequent payout to that recipient.
+</Info>
+
+---
+
+## Reference Data & Rates
+
+<CardGroup cols={2}>
+
+  <Card title="List Payout Banks" icon="building-columns" href="/api-reference/cross-boarder-payments/list-payout-banks" arrow="true">
+    List the available payout banks for supported destinations.
+  </Card>
+
+  <Card title="Get Exchange Rates" icon="dollar-sign" href="/api-reference/cross-boarder-payments/get-exchange-rates" arrow="true">
+    View the exchange rate information used when creating a payout.
+  </Card>
+
+  <Card title="Get Payee Rules (Mandatory Fields)" icon="list-check" href="/api-reference/cross-boarder-payments/get-payee-rules" arrow="true">
+    Inspect the payee-specific mandatory fields required before creating a payout.
+  </Card>
+
+</CardGroup>
+
+---
+
+## Payee Setup
+
+### Addresses
+
+<CardGroup cols={2}>
+
+  <Card title="Add a Payee Address" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-address" arrow="true">
+    Save a payee address for a user before bank setup or payout creation.
+  </Card>
+
+  <Card title="Get a Payee Address" icon="receipt" href="/api-reference/cross-boarder-payments/get-a-payee-address" arrow="true">
+    Retrieve a specific saved payee address by user and address ID.
+  </Card>
+
+  <Card title="Edit a Payee Address" icon="pencil" href="/api-reference/cross-boarder-payments/edit-a-payee-address" arrow="true">
+    Update a saved payee address for a specific user.
+  </Card>
+
+  <Card title="List Payee Addresses" icon="list" href="/api-reference/cross-boarder-payments/list-payee-addresses" arrow="true">
+    Retrieve all saved payee addresses for a specific user.
+  </Card>
+
+</CardGroup>
+
+### Bank Accounts
+
+<CardGroup cols={2}>
+
+  <Card title="Add a Payee Bank" icon="plus" href="/api-reference/cross-boarder-payments/add-payee-bank" arrow="true">
+    Save a payee bank account for cross-border payouts.
+  </Card>
+
+  <Card title="List Payee Banks" icon="list" href="/api-reference/cross-boarder-payments/list-payee-banks" arrow="true">
+    Retrieve all saved payee bank accounts for a specific user.
+  </Card>
+
+  <Card title="Delete a Payee Bank" icon="trash" href="/api-reference/cross-boarder-payments/delete-payee-bank" arrow="true">
+    Remove a saved payee bank account for a user.
+  </Card>
+
+</CardGroup>
+
+---
+
+## Payments
+
+<CardGroup cols={2}>
+
+  <Card title="Create a Cross-Border Payment" icon="paper-plane" href="/api-reference/cross-boarder-payments/create-a-cross-border-payment" arrow="true">
+    Create and submit a new cross-border payment for a user's payee.
+  </Card>
+
+</CardGroup>
+
+---
+
+## Best Practices
+
+- Always read **[Payee Rules](/api-reference/cross-boarder-payments/get-payee-rules)** for the target
+  corridor before collecting payee details — required fields vary by country and bank.
+- Fetch **[Exchange Rates](/api-reference/cross-boarder-payments/get-exchange-rates)** close to payout
+  time so quoted amounts reflect current rates.
+- Reuse saved payee **addresses** and **banks** instead of recreating them for every payout.
+- Use webhooks or your own downstream reconciliation flow rather than assuming success on creation.
