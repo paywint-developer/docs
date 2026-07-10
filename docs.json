@@ -354,7 +354,7 @@
   ],
   "api": {
     "openapi": {
-      "source": "https://test.pw.wintpay.com/openapi.json?test-version=1.0.5",
+      "source": "https://api.pw.wintpay.com/openapi.json?test-version=1.0.5",
       "directory": "api-reference"
     }
   },
